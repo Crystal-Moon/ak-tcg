@@ -4,7 +4,7 @@
     },
     "pages": {
         "header": {
-            "title": "title of app"
+            "title": "Title of app"
         },
         "main": {
             "some": "some main en"

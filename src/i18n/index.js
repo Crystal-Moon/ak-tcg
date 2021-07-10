@@ -15,9 +15,7 @@ const resources = {
 
 const config = {
   resources,
-  lng: localStorage.getItem('lenguage')
-    ? localStorage.getItem('lenguage')
-    : navigator.language.split('-')[0],
+  lng: localStorage.getItem('lenguage') || navigator.language.split('-')[0],
   fallbackLng: 'es',
   interpolation: {
     escapeValue: false,

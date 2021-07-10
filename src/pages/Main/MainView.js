@@ -1,12 +1,14 @@
 /* eslint-disable */
-import { Grid } from '@material-ui/core';
+import { Grid, Container } from '@material-ui/core';
 const HomeView = props => {
   const { lang } = props;
 
   return (
-    <Grid container spacing={1}>
-      <div>Main </div>
-    </Grid>
+    <Container maxWidth="lg">
+      <Grid container spacing={1}>
+        <div>Main </div>
+      </Grid>
+    </Container>
   );
 };
 
