@@ -1,0 +1,16 @@
+{
+    "components": {
+        "button": "boton ES"
+    },
+    "pages": {
+        "header": {
+            "title": "titulo de app"
+        },
+        "main": {
+            "some": "some main"
+        },
+        "footer": {
+            "someF": "some footer es"
+        }
+    }
+}
