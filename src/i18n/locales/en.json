@@ -1,6 +1,8 @@
 {
     "components": {
-        "button": "boton EN"
+        "button": "boton EN",
+        "cardName": "NickName",
+        "cardTitle": "Aura Kingdom's Player"
     },
     "pages": {
         "header": {

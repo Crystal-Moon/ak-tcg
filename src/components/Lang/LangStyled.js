@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import { useStyles } from './styles';
 import { useTranslation } from 'react-i18next';
 import { IconButton, FormControl } from '@material-ui/core';
@@ -13,28 +14,28 @@ export function LangStyled() {
   const selectedLang = i18n.language;
   const classes = useStyles();
 
-  function onChangeLang(locale) {
-    i18n.changeLanguage(locale);
-    localStorage.setItem('lenguage', locale);
+  function onChangeLang(lang) {
+    i18n.changeLanguage(lang);
+    localStorage.setItem('lenguage', lang);
   }
 
   return (
-    <FormControl component="fieldset" className="Lang" className={classes.root}>
+    <FormControl component="fieldset" className={classes.root}>
       {LANG.map(({ lang, flag }, k) => (
-        <div className="col-auto" key={k}>
+        <div key={k}>
           <input
             type="radio"
             className={classes.input}
             name="lang"
-            id={'lang1' + lang}
+            id={`lang_${lang}`}
             value={lang}
             checked={selectedLang === lang}
           />
           <label
-            className={`${classes.label} ${
-              selectedLang === lang ? classes.checked : ''
-            }`}
-            htmlFor={'lang1' + lang}
+            className={classnames(classes.label, {
+              [classes.checked]: selectedLang === lang,
+            })}
+            htmlFor={`lang_${lang}`}
           >
             <IconButton
               onClick={() => onChangeLang(lang)}
