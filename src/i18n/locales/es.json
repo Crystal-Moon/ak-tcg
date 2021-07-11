@@ -4,13 +4,14 @@
             "name": "NickName",
             "title": "Jugador de Aura Kingdom"
         },
-        "from": {
+        "form": {
             "star": "Stars",
             "level": "Nivel",
             "name": "PJ",
             "title": "Título",
             "image": "Imagen",
-            "element": "Elemento"
+            "element": "Elemento",
+            "upload": "Subir Imagen"
         }
     },
     "pages": {

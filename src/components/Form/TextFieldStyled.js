@@ -1,7 +1,16 @@
 /* eslint-disable */
 import { TextField } from '@material-ui/core';
 export default function TextFieldStyled(props) {
-  const { label, defaultValue, type, id, readOnly = false, value } = props;
+  const {
+    label,
+    defaultValue,
+    type,
+    id,
+    readOnly = false,
+    value,
+    startIcon,
+    endIcon,
+  } = props;
 
   return (
     <TextField
@@ -16,6 +25,7 @@ export default function TextFieldStyled(props) {
       fullWidth
       InputProps={{
         readOnly: readOnly,
+        startAdornment: startIcon,
       }}
     />
   );

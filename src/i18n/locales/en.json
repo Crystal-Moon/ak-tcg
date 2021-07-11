@@ -4,13 +4,14 @@
             "name": "NickName",
             "title": "Aura Kingdom's Player"
         },
-        "from": {
+        "form": {
             "star": "Stars",
             "level": "Level",
             "name": "IGN",
             "title": "Title",
             "image": "Image",
-            "element": "Element"
+            "element": "Element",
+            "upload": "Upload"
         }
     },
     "pages": {
