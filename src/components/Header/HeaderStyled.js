@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { useStyles } from './styles';
 import { Grid, Container } from '@material-ui/core';
-import logo from 'assets/icons/cards.png';
+import logo from 'assets/icons/logo.png';
 import Lang from 'components/Lang';
 import { useTranslation } from 'react-i18next';
 

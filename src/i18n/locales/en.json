@@ -1,8 +1,17 @@
 {
     "components": {
-        "button": "boton EN",
-        "cardName": "NickName",
-        "cardTitle": "Aura Kingdom's Player"
+        "card": {
+            "name": "NickName",
+            "title": "Aura Kingdom's Player"
+        },
+        "from": {
+            "star": "Stars",
+            "level": "Level",
+            "name": "IGN",
+            "title": "Title",
+            "image": "Image",
+            "element": "Element"
+        }
     },
     "pages": {
         "header": {

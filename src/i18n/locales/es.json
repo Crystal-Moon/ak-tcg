@@ -1,8 +1,17 @@
 {
     "components": {
-        "button": "boton ES",
-        "cardName": "NickName",
-        "cardTitle": "Jugador de Aura Kingdom"
+        "card": {
+            "name": "NickName",
+            "title": "Jugador de Aura Kingdom"
+        },
+        "from": {
+            "star": "Stars",
+            "level": "Nivel",
+            "name": "PJ",
+            "title": "Título",
+            "image": "Imagen",
+            "element": "Elemento"
+        }
     },
     "pages": {
         "header": {
