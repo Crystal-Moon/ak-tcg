@@ -1,20 +1,23 @@
 /* eslint-disable */
+import { useTranslation } from 'react-i18next';
 import { useStyles } from './styles';
 import {
   Grid,
   Input,
-  TextField,
+  //TextField,
   InputLabel,
   Select,
   MenuItem,
   FormControl,
   InputAdornment,
   IconButton,
+  Button,
   OutlinedInput,
   InputBase,
 } from '@material-ui/core';
+import TextField from './TextFieldStyled';
+import SelectStyled from './SelectStyled';
 import AdbIcon from '@material-ui/icons/Adb';
-import { useTranslation } from 'react-i18next';
 
 export function FormStyled(props) {
   const { t } = useTranslation();
@@ -23,6 +26,101 @@ export function FormStyled(props) {
   function focused(e) {
     console.log('focus');
   }
+
+  return (
+    <Grid container direction="column">
+      <Grid item container spacing={2} alignItems="center">
+        <Grid item xs={4}>
+          <TextField
+            label="Size"
+            id="outlined-size-normal"
+            type="text"
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={8}>
+          <TextField
+            label="Size"
+            id="outlined-size-normal"
+            type="text"
+            fullWidth
+          />
+        </Grid>
+      </Grid>
+      <Grid item container spacing={2}>
+        <Grid item xs={4}>
+          <SelectStyled label={'levell'} id={'some_id'} items={[]} value={10} />
+        </Grid>
+        <Grid item xs={4}>
+          <TextField
+            label="numero"
+            id="outlined-size-normal"
+            type="number"
+            fullWidth
+          />
+        </Grid>
+
+        <Grid item xs={4}>
+          <SelectStyled
+            label={'levell2'}
+            id={'some_id2'}
+            items={[]}
+            value={10}
+          />
+        </Grid>
+      </Grid>
+      <Grid item container spacing={2} direction="row">
+        <Grid item xs={10}>
+          <FormControl variant="outlined" margin="dense" fullWidth>
+            <Grid
+              container
+              spacing={2}
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Grid item justifyContent="center" alignItems="center">
+                <input
+                  accept="image/*"
+                  //className={classes.input}
+                  //style={{ display: 'none' }}
+                  id="raised-button-file"
+                  hidden
+                  type="file"
+                />
+                <label htmlFor="raised-button-file">
+                  <Button
+                    variant="contained"
+                    component="span"
+                    color="primary"
+                    className={classes.button}
+                  >
+                    Upload
+                  </Button>
+                </label>
+              </Grid>
+              <Grid item xs={10}>
+                <TextField label="myFile1" id="myFile1" type="text" readOnly />
+              </Grid>
+            </Grid>
+          </FormControl>
+        </Grid>
+        <Grid container item xs={2} justifyContent="center" alignItems="center">
+          <FormControl variant="outlined" margin="dense" fullWidth>
+            <Button
+              variant="contained"
+              component="span"
+              color="primary"
+              className={classes.button}
+            >
+              Edit
+            </Button>
+          </FormControl>
+        </Grid>
+      </Grid>
+      <Grid item container></Grid>
+    </Grid>
+  );
+  /*
   return (
     <div>
       <TextField
@@ -109,4 +207,5 @@ export function FormStyled(props) {
       </FormControl>
     </div>
   );
+  */
 }
