@@ -13,6 +13,15 @@
             "element": "Element",
             "upload": "Upload",
             "download": "Download Card"
+        },
+        "elements": {
+            "brutal": "Physical",
+            "storm": "Storm",
+            "fire": "Flame",
+            "lightning": "Lightning",
+            "ice": "Ice",
+            "holy": "Holy Light",
+            "dark": "Dark"
         }
     },
     "pages": {

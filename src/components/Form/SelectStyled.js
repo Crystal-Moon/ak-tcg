@@ -2,15 +2,16 @@
 import { FormControl, Select, InputLabel, MenuItem } from '@material-ui/core';
 
 export default function SelectStyled(props) {
-  const { label, id, items = [], onChange = () => {}, value } = props;
+  const { label, name, id, items = [], onChange = () => {}, value } = props;
   return (
     <FormControl variant="outlined" margin="dense" fullWidth>
       <InputLabel id={id}>{label}</InputLabel>
       <Select
         labelId={id}
-        id={id}
+        id={`${id}_select`}
+        name={name}
         value={value}
-        //onChange={onChange}
+        onChange={onChange}
         fullWidth
         size="small"
         label="Age"
@@ -21,12 +22,6 @@ export default function SelectStyled(props) {
             {lbl}
           </MenuItem>
         ))}
-        <MenuItem value="">
-          <em>None</em>
-        </MenuItem>
-        <MenuItem value={10}>Ten</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
       </Select>
     </FormControl>
   );

@@ -5,7 +5,7 @@ import Form from 'components/Form';
 import Card from 'components/Card';
 
 const HomeView = props => {
-  const { file, card, handlerUploadBackground } = props;
+  const { file, card, handlerUploadBackground, handlerChangeForm } = props;
   const classes = useStyles();
 
   return (
@@ -15,14 +15,15 @@ const HomeView = props => {
           <h2>Main </h2>
           <Form
             fileName={file.name}
-            card={card}
+            form={card}
             fileTest={file.file}
             onChangeFile={handlerUploadBackground}
+            onChangeForm={handlerChangeForm}
           />
         </Grid>
         <Grid item xs={5} className={classes.cardContainer}>
           <h2>Rigth </h2>
-          <Card />
+          <Card card={card} />
         </Grid>
       </Grid>
     </Container>

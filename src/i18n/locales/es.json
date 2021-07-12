@@ -7,12 +7,21 @@
         "form": {
             "star": "Stars",
             "level": "Nivel",
-            "name": "PJ",
+            "name": "Nombre PJ",
             "title": "Título",
             "image": "Imagen",
             "element": "Elemento",
             "upload": "Subir Imagen",
             "download": "Descargar Carta"
+        },
+        "elements": {
+            "brutal": "Brutal",
+            "storm": "Tormenta",
+            "fire": "Fuego",
+            "lightning": "Rayo",
+            "ice": "Hielo",
+            "holy": "Luz Divina",
+            "dark": "Oscuridad"
         }
     },
     "pages": {

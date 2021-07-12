@@ -20,8 +20,18 @@ import TextField from './TextFieldStyled';
 import SelectStyled from './SelectStyled';
 import AdbIcon from '@material-ui/icons/Adb';
 
+const ELEMENTS = [
+  'brutal',
+  'storm',
+  'fire',
+  'lightning',
+  'ice',
+  'holy',
+  'dark',
+];
+
 export function FormStyled(props) {
-  const { fileName, fileTest, onChangeFile } = props;
+  const { fileName, fileTest, onChangeFile, onChangeForm, form } = props;
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -30,54 +40,79 @@ export function FormStyled(props) {
       <Grid item container spacing={2} alignItems="center">
         <Grid item xs={4}>
           <TextField
-            label="Size"
-            id="outlined-size-normal"
+            label={t('components.form.name')}
+            name="name"
+            id="name"
+            value={form.name}
             type="text"
+            onChange={onChangeForm}
             fullWidth
           />
         </Grid>
         <Grid item xs={8}>
           <TextField
-            label="Size"
-            id="outlined-size-normal"
+            label={t('components.form.title')}
+            name="title"
+            id="title"
+            value={form.title}
             type="text"
+            onChange={onChangeForm}
             fullWidth
           />
         </Grid>
       </Grid>
       <Grid item container spacing={2}>
         <Grid item xs={4}>
-          <SelectStyled label={'levell'} id={'some_id'} items={[]} value={10} />
+          <SelectStyled
+            label={t('components.form.star')}
+            id="star"
+            name="star"
+            items={new Array(5)
+              .fill('★')
+              .map((s, i) => ({ lbl: s.repeat(i + 1), val: i + 1 }))}
+            value={form.star}
+            onChange={onChangeForm}
+          />
         </Grid>
         <Grid item xs={4}>
           <TextField
-            label="numero"
-            id="outlined-size-normal"
+            label={t('components.form.level')}
+            name="level"
+            id="level"
             type="number"
+            value={form.level}
+            onChange={onChangeForm}
             fullWidth
           />
         </Grid>
 
         <Grid item xs={4}>
           <SelectStyled
-            label={'levell2'}
-            id={'some_id2'}
-            items={[]}
-            value={10}
+            label={t('components.form.element')}
+            name="element"
+            id="element"
+            items={ELEMENTS.map(e => ({
+              lbl: t(`components.elements.${e}`),
+              val: e,
+            }))}
+            value={form.element}
+            onChange={onChangeForm}
           />
         </Grid>
       </Grid>
       <Grid item container spacing={2} direction="row">
         <Grid item xs={12}>
           <TextField
-            label="imagenn"
-            id="filled-start-adornment"
+            label={t('components.form.image')}
+            name="fileName"
+            id="fileName"
             //className={}
             variant="filled"
             value={fileName}
+            onChange={onChangeForm}
             readOnly
             startIcon={
-              <label htmlFor="raised-button-file">
+              <label htmlFor="input_file">
                 <Button
                   variant="text"
                   component="span"
@@ -104,11 +139,10 @@ export function FormStyled(props) {
           <input
             accept=".png, .jpg, .jpeg"
             //className={classes.input}
-            id="raised-button-file"
-            name="raised-button-file"
+            id="input_file"
+            name="input_file"
             hidden
             type="file"
-            onLoad={() => {}}
             onChange={onChangeFile}
           />
         </Grid>

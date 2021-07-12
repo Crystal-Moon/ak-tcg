@@ -3,14 +3,19 @@ import { useState } from 'react';
 import MainView from './MainView';
 
 export function MainContainer() {
-  const [file, setFile] = useState({});
-  const [card, setCard] = useState({});
+  const [incomingFile, setIncomingFile] = useState({});
+  const [finalFile, setFinalFile] = useState();
+  const [card, setCard] = useState({
+    level: 25,
+    element: 'brutal',
+    star: 1,
+  });
 
   function handlerUploadBackground(event) {
     var file = event.target.files[0];
     console.log({ file });
     //const name = file.name;
-    setFile(prev => ({ ...prev, name: file.name }));
+    setIncomingFile(prev => ({ ...prev, name: file.name }));
 
     var reader = new FileReader();
     reader.onload = function (event) {
@@ -23,8 +28,8 @@ export function MainContainer() {
       function () {
         // convert image file to base64 string
         console.log('reader.result', reader.result);
-        //setFileTest(reader.result); // este sirve para src
-        setFile(prev => ({ ...prev, file: reader.result }));
+        //setIncomingFileTest(reader.result); // este sirve para src
+        setIncomingFile(prev => ({ ...prev, file: reader.result }));
         //preview.src = ;
       },
       false
@@ -33,10 +38,19 @@ export function MainContainer() {
     reader.readAsDataURL(file);
   }
 
+  function handlerChangeForm(event) {
+    const key = event.target.name;
+    const val = event.target.value;
+    console.log('se setea', key, ':', val);
+    setCard(prev => ({ ...prev, [key]: val }));
+    console.log('card', card);
+  }
+
   return (
     <MainView
-      file={file}
+      file={incomingFile}
       card={card}
+      handlerChangeForm={handlerChangeForm}
       handlerUploadBackground={handlerUploadBackground}
     />
   );

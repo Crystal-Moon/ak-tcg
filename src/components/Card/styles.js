@@ -7,6 +7,7 @@ export const useStyles = makeStyles({
     height: 512,
     width: 360,
     border: 'none',
+    margin: 'auto',
   },
   capa: {
     position: 'absolute',
@@ -14,7 +15,15 @@ export const useStyles = makeStyles({
     width: '100%',
   },
   bg: {
-    backgroundColor: 'grey',
+    backgroundColor: '#777777',
+    backgroundImage:
+      'url("https://icon-library.com/images/no-icon-png/no-icon-png-6.jpg")',
+    backgroundPosition: 'center center',
+    backgroundSize: '20% auto',
+    backgroundRepeat: 'no-repeat',
+    '& img': {
+      backgroundColor: 'white',
+    },
   },
   element: {
     width: 64,
