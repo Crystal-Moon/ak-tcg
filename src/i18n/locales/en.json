@@ -11,7 +11,8 @@
             "title": "Title",
             "image": "Image",
             "element": "Element",
-            "upload": "Upload"
+            "upload": "Upload",
+            "download": "Download Card"
         }
     },
     "pages": {

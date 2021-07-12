@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { TextField } from '@material-ui/core';
+import { TextField, InputAdornment } from '@material-ui/core';
 export default function TextFieldStyled(props) {
   const {
     label,
@@ -25,7 +25,12 @@ export default function TextFieldStyled(props) {
       fullWidth
       InputProps={{
         readOnly: readOnly,
-        startAdornment: startIcon,
+        startAdornment: startIcon ? (
+          <InputAdornment position="start">{startIcon}</InputAdornment>
+        ) : null,
+        endAdornment: endIcon ? (
+          <InputAdornment position="end">{endIcon}</InputAdornment>
+        ) : null,
       }}
     />
   );

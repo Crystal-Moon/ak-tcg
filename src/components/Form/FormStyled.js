@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useStyles } from './styles';
 import {
@@ -20,12 +21,9 @@ import SelectStyled from './SelectStyled';
 import AdbIcon from '@material-ui/icons/Adb';
 
 export function FormStyled(props) {
+  const { fileName, fileTest, onChangeFile } = props;
   const { t } = useTranslation();
   const classes = useStyles();
-
-  function focused(e) {
-    console.log('focus');
-  }
 
   return (
     <Grid container direction="column">
@@ -70,50 +68,58 @@ export function FormStyled(props) {
         </Grid>
       </Grid>
       <Grid item container spacing={2} direction="row">
-        <Grid item xs={10}>
+        <Grid item xs={12}>
           <TextField
             label="imagenn"
             id="filled-start-adornment"
             //className={}
-            value={'name of file (tomado en onloead event)'}
-            startIcon={
-              <InputAdornment position="start">
-                <label htmlFor="raised-button-file">
-                  <Button
-                    variant="text"
-                    component="span"
-                    color="primary"
-                    //className={}
-                  >
-                    {t('components.form.upload')}
-                  </Button>
-                </label>
-              </InputAdornment>
-            }
             variant="filled"
+            value={fileName}
+            readOnly
+            startIcon={
+              <label htmlFor="raised-button-file">
+                <Button
+                  variant="text"
+                  component="span"
+                  color="primary"
+                  //className={}
+                >
+                  {t('components.form.upload')}
+                </Button>
+              </label>
+            }
+            endIcon={
+              fileName ? (
+                <IconButton
+                  variant="text"
+                  component="span"
+                  color="primary"
+                  //className={}
+                >
+                  <AdbIcon></AdbIcon>
+                </IconButton>
+              ) : null
+            }
           />
           <input
-            accept="image/*"
+            accept=".png, .jpg, .jpeg"
             //className={classes.input}
             id="raised-button-file"
+            name="raised-button-file"
             hidden
             type="file"
+            onLoad={() => {}}
+            onChange={onChangeFile}
           />
         </Grid>
-        <Grid container item xs={2} justifyContent="center" alignItems="center">
-          <FormControl variant="outlined" margin="dense" fullWidth>
-            <Button
-              variant="contained"
-              component="span"
-              color="primary"
-              className={classes.button}
-            >
-              Edit
-            </Button>
-          </FormControl>
-        </Grid>
       </Grid>
-      <Grid item container></Grid>
+      <Grid item container>
+        // aqui condicional si es 5 start es un select con jpg y gif
+        <Button variant="contained" color="primary">
+          Descargar
+        </Button>
+      </Grid>
+      //test_img <img src={fileTest} />
     </Grid>
   );
 }
