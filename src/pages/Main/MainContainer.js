@@ -12,12 +12,12 @@ export function MainContainer() {
   });
 
   function handlerUploadBackground(event) {
-    var file = event.target.files[0];
+    const file = event.target.files[0];
     console.log({ file });
     //const name = file.name;
     setIncomingFile(prev => ({ ...prev, name: file.name }));
 
-    var reader = new FileReader();
+    const reader = new FileReader();
     reader.onload = function (event) {
       // El texto del archivo se mostrará por consola aquí
       //console.log(event.target.result);

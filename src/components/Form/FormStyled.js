@@ -19,16 +19,7 @@ import {
 import TextField from './TextFieldStyled';
 import SelectStyled from './SelectStyled';
 import AdbIcon from '@material-ui/icons/Adb';
-
-const ELEMENTS = [
-  'brutal',
-  'storm',
-  'fire',
-  'lightning',
-  'ice',
-  'holy',
-  'dark',
-];
+import { ELEMENTS } from 'helpers';
 
 export function FormStyled(props) {
   const { fileName, fileTest, onChangeFile, onChangeForm, form } = props;
