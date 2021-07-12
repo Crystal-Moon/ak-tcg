@@ -41,11 +41,14 @@ export const useStyles = makeStyles({
     color: 'white',
     marginLeft: 'auto',
     marginRight: 'auto',
-    fontSize: 16,
-    fontWeight: 300,
+    fontSize: 24, // subir a 24 si se necesita ancho
+    fontWeight: 500,
+    // '-webkit-text-stroke': '1px black',
+    textShadow:
+      '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
   },
   title: {
-    bottom: 69,
+    bottom: 79,
   },
   name: {
     bottom: 46,
@@ -53,8 +56,9 @@ export const useStyles = makeStyles({
   lvl: {
     width: 64,
     left: 21,
-    top: 37,
-    fontSize: '2em',
+    top: 33,
+    fontSize: 35,
+    fontFamily: '"Open Sans", sans-serif',
     fontWeight: 400,
   },
 });

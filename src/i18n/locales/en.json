@@ -7,8 +7,8 @@
         "form": {
             "star": "Stars",
             "level": "Level",
-            "name": "IGN",
-            "title": "Title",
+            "name": "Name",
+            "title": "Title (optional)",
             "image": "Image",
             "element": "Element",
             "upload": "Upload",

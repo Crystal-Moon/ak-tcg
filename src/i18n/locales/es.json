@@ -7,8 +7,8 @@
         "form": {
             "star": "Stars",
             "level": "Nivel",
-            "name": "Nombre PJ",
-            "title": "Título",
+            "name": "Nombre",
+            "title": "Título (opcional)",
             "image": "Imagen",
             "element": "Elemento",
             "upload": "Subir Imagen",
