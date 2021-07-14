@@ -12,8 +12,8 @@ const HomeView = props => {
     handlerUploadBackground,
     handlerChangeForm,
     openModal,
-    onCloseModal,
-    imageModal,
+    handlerOpenModal,
+    handlerCloseModal,
     onCropImage,
   } = props;
   const classes = useStyles();
@@ -22,8 +22,8 @@ const HomeView = props => {
     <Container maxWidth="lg">
       <Modal
         open={openModal}
-        //onClose={onCloseModal}
-        image={imageModal}
+        handlerCloseModal={handlerCloseModal}
+        image={file.file}
         onCropImage={onCropImage}
       />
       <Grid container spacing={1}>
@@ -32,7 +32,7 @@ const HomeView = props => {
           <Form
             fileName={file.name}
             form={card}
-            fileTest={file.file}
+            handlerOpenModal={handlerOpenModal}
             onChangeFile={handlerUploadBackground}
             onChangeForm={handlerChangeForm}
           />

@@ -25,18 +25,18 @@ export function MainContainer() {
     console.log({ file });
     //const name = file.name;
     setIncomingFile(prev => ({ ...prev, name: file.name }));
+    console.log('en el handler input');
+
+    //if (file.name === incomingFile.name) setOpenModal(true);
 
     const reader = new FileReader();
-    reader.onload = function (event) {
-      // El texto del archivo se mostrará por consola aquí
-      //console.log(event.target.result);
-    };
 
     reader.addEventListener(
       'load',
       function () {
         // convert image file to base64 string
-        console.log('reader.result', reader.result);
+        //console.log('reader.result', reader.result);
+        console.log('imagen loaded');
         //setIncomingFileTest(reader.result); // este sirve para src
         //setIncomingFile(prev => ({ ...prev, file: reader.result }));
         loadEditor(reader.result);
@@ -49,9 +49,8 @@ export function MainContainer() {
   }
 
   function loadEditor(result) {
-    setOpenModal(true);
     setIncomingFile(prev => ({ ...prev, file: result }));
-    //setAvatar(prev => ({ ...prev, image: result }));
+    setOpenModal(true);
   }
 
   function onCropImage(image) {}
@@ -68,9 +67,9 @@ export function MainContainer() {
     <MainView
       file={incomingFile}
       card={card}
-      imageModal={null}
       openModal={openModal}
-      onCloseModal={() => {}}
+      handlerOpenModal={() => setOpenModal(true)}
+      handlerCloseModal={() => setOpenModal(false)}
       onCropImage={onCropImage}
       handlerChangeForm={handlerChangeForm}
       handlerUploadBackground={handlerUploadBackground}

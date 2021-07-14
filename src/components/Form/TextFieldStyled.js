@@ -12,6 +12,9 @@ export default function TextFieldStyled(props) {
     startIcon,
     endIcon,
     onChange,
+    inputProps,
+    required,
+    error,
   } = props;
 
   return (
@@ -25,8 +28,11 @@ export default function TextFieldStyled(props) {
       size="small"
       margin="dense"
       type={type}
+      error={error}
+      required={required}
       onChange={onChange}
       fullWidth
+      inputProps={inputProps}
       InputProps={{
         readOnly: readOnly,
         startAdornment: startIcon ? (

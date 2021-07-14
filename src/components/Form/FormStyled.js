@@ -15,6 +15,7 @@ import {
   Button,
   OutlinedInput,
   InputBase,
+  Icon,
 } from '@material-ui/core';
 import TextField from './TextFieldStyled';
 import SelectStyled from './SelectStyled';
@@ -22,7 +23,13 @@ import AdbIcon from '@material-ui/icons/Adb';
 import { ELEMENTS } from 'helpers';
 
 export function FormStyled(props) {
-  const { fileName, fileTest, onChangeFile, onChangeForm, form } = props;
+  const {
+    fileName,
+    onChangeFile,
+    onChangeForm,
+    handlerOpenModal,
+    form,
+  } = props;
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -38,6 +45,8 @@ export function FormStyled(props) {
             type="text"
             onChange={onChangeForm}
             fullWidth
+            required
+            error={!form.name}
           />
         </Grid>
         <Grid item xs={8}>
@@ -71,8 +80,11 @@ export function FormStyled(props) {
             name="level"
             id="level"
             type="number"
+            inputProps={{ min: 1, max: 99 }}
             value={form.level}
             onChange={onChangeForm}
+            required
+            error={!form.level}
             fullWidth
           />
         </Grid>
@@ -104,12 +116,7 @@ export function FormStyled(props) {
             readOnly
             startIcon={
               <label htmlFor="input_file">
-                <Button
-                  variant="text"
-                  component="span"
-                  color="primary"
-                  //className={}
-                >
+                <Button variant="text" component="span" color="primary">
                   {t('components.form.upload')}
                 </Button>
               </label>
@@ -117,24 +124,26 @@ export function FormStyled(props) {
             endIcon={
               fileName ? (
                 <IconButton
-                  variant="text"
+                  variant=""
                   component="span"
                   color="primary"
-                  //className={}
+                  onClick={handlerOpenModal}
                 >
-                  <AdbIcon></AdbIcon>
+                  <AdbIcon />
                 </IconButton>
               ) : null
             }
           />
           <input
             accept=".png, .jpg, .jpeg"
-            //className={classes.input}
             id="input_file"
             name="input_file"
             hidden
             type="file"
-            onChange={onChangeFile}
+            onChange={event => {
+              onChangeFile(event);
+              event.target.value = '';
+            }}
           />
         </Grid>
       </Grid>
@@ -144,7 +153,6 @@ export function FormStyled(props) {
           Descargar
         </Button>
       </Grid>
-      //test_img <img src={fileTest} />
     </Grid>
   );
 }

@@ -22,6 +22,10 @@
             "ice": "Hielo",
             "holy": "Luz Divina",
             "dark": "Oscuridad"
+        },
+        "modal": {
+            "crop": "Seleccionar",
+            "cancel": "Cancelar"
         }
     },
     "pages": {

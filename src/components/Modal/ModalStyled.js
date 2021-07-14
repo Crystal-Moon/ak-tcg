@@ -1,39 +1,34 @@
 /* eslint-disable */
 import React, { useState } from 'react';
-import {
-  Modal,
-  Fade,
-  Paper,
-  Dialog,
-  Slide,
-  Container,
-  Button,
-  Grid,
-  Slider,
-} from '@material-ui/core';
+import { Paper, Dialog, Slide, Button, Grid, Slider } from '@material-ui/core';
 import { useStyles } from './styles';
+import { useTranslation } from 'react-i18next';
 import ghost from 'assets/imgs/macro_0.png';
 import AvatarEditor from 'react-avatar-editor';
 import AdbIcon from '@material-ui/icons/Adb';
-//import img_example from 'assets/imgs/test.png';
-import img_example from 'assets/imgs/test1.jpg';
+//import img_example from 'assets/imgs/test1.jpg';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export function ModalStyled(props) {
-  const { open, onClose, image } = props;
-  const [rotate, setRotate] = useState();
-  const [scale, setScale] = useState();
-
+  const { t } = useTranslation();
+  const {
+    open,
+    image,
+    handlerCloseModal,
+    handlerCropImage = some => console.log('cortado', some),
+  } = props;
+  const [rotate, setRotate] = useState(0);
+  const [scale, setScale] = useState(1);
   const classes = useStyles({ img: ghost });
+
   return (
     <Dialog
       open={open}
       TransitionComponent={Transition}
       keepMounted
-      onClose={onClose}
       className={classes.root}
       aria-labelledby="alert-dialog-slide-title"
       aria-describedby="alert-dialog-slide-description"
@@ -49,13 +44,20 @@ export function ModalStyled(props) {
               spacing={2}
             >
               <Grid item xs={1}>
-                <AdbIcon></AdbIcon>
+                <AdbIcon />
               </Grid>
               <Grid item xs>
-                <Slider orientation="vertical"></Slider>
+                <Slider
+                  orientation="vertical"
+                  value={scale}
+                  min={1}
+                  max={4}
+                  step={0.01}
+                  onChange={(event, newValue) => setScale(newValue)}
+                />
               </Grid>
               <Grid item xs={1}>
-                <AdbIcon></AdbIcon>
+                <AdbIcon />
               </Grid>
             </Grid>
           </Grid>
@@ -63,8 +65,7 @@ export function ModalStyled(props) {
             <div className={classes.ghost}></div>
             <AvatarEditor
               rotate={rotate}
-              //image={image}
-              image={img_example}
+              image={image}
               scale={scale}
               height={512}
               width={360}
@@ -75,18 +76,32 @@ export function ModalStyled(props) {
         </Grid>
         <Grid container direction="row" spacing={2}>
           <Grid item xs={1}>
-            <AdbIcon></AdbIcon>
+            <AdbIcon />
           </Grid>
           <Grid item xs>
-            <Slider></Slider>
+            <Slider
+              max={360}
+              value={rotate}
+              onChange={(event, newValue) => setRotate(newValue)}
+            />
           </Grid>
         </Grid>
         <Grid container spacing={2} justifyContent="center" alignItems="center">
-          <Button color="primary" variant="contained" className={classes.btn}>
-            Select
+          <Button
+            color="primary"
+            variant="contained"
+            className={classes.btn}
+            onClick={handlerCropImage}
+          >
+            {t('components.modal.crop')}
           </Button>
-          <Button color="secondary" variant="contained" className={classes.btn}>
-            cancel
+          <Button
+            color="secondary"
+            variant="contained"
+            className={classes.btn}
+            onClick={handlerCloseModal}
+          >
+            {t('components.modal.cancel')}
           </Button>
         </Grid>
       </Paper>

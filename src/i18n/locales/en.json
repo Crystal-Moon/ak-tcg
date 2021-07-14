@@ -22,6 +22,10 @@
             "ice": "Ice",
             "holy": "Holy Light",
             "dark": "Dark"
+        },
+        "modal": {
+            "crop": "Crop and select",
+            "cancel": "cancel"
         }
     },
     "pages": {
