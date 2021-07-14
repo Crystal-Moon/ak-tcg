@@ -14,12 +14,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export function ModalStyled(props) {
   const { t } = useTranslation();
-  const {
-    open,
-    image,
-    handlerCloseModal,
-    handlerCropImage = some => console.log('cortado', some),
-  } = props;
+  const { open, image, handlerCloseModal, handlerCropImage, editorRef } = props;
   const [rotate, setRotate] = useState(0);
   const [scale, setScale] = useState(1);
   const classes = useStyles({ img: ghost });
@@ -30,8 +25,6 @@ export function ModalStyled(props) {
       TransitionComponent={Transition}
       keepMounted
       className={classes.root}
-      aria-labelledby="alert-dialog-slide-title"
-      aria-describedby="alert-dialog-slide-description"
     >
       <Paper elevation={3} className={classes.paper}>
         <Grid container direction="row" spacing={2}>
@@ -64,6 +57,7 @@ export function ModalStyled(props) {
           <Grid item>
             <div className={classes.ghost}></div>
             <AvatarEditor
+              ref={editorRef}
               rotate={rotate}
               image={image}
               scale={scale}

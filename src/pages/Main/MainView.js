@@ -11,6 +11,7 @@ const HomeView = props => {
     card,
     handlerUploadBackground,
     handlerChangeForm,
+    editorRef,
     openModal,
     handlerOpenModal,
     handlerCloseModal,
@@ -24,7 +25,8 @@ const HomeView = props => {
         open={openModal}
         handlerCloseModal={handlerCloseModal}
         image={file.file}
-        onCropImage={onCropImage}
+        handlerCropImage={onCropImage}
+        editorRef={editorRef}
       />
       <Grid container spacing={1}>
         <Grid item xs={7} className={classes.formContainer}>
