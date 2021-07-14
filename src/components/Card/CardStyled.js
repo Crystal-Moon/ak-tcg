@@ -2,8 +2,7 @@
 import classnames from 'classnames';
 import { useStyles } from './styles';
 import { useTranslation } from 'react-i18next';
-import { ELEMENT_FILES } from 'helpers';
-import { STAR_FILES } from 'helpers';
+import { ELEMENT_FILES, STAR_FILES } from 'helpers';
 
 export function CardStyled(props) {
   const { t } = useTranslation();
@@ -26,10 +25,10 @@ export function CardStyled(props) {
         {level}
       </div>
       <div className={classnames(classes.capa, classes.txt, classes.title)}>
-        {title || t('components.card.title')}
+        {title}
       </div>
       <div className={classnames(classes.capa, classes.txt, classes.name)}>
-        {name || t('components.card.name')}
+        {name}
       </div>
     </div>
   );

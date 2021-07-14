@@ -1,0 +1,1 @@
+export { ModalStyled as default } from './ModalStyled';

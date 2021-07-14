@@ -3,13 +3,29 @@ import { Grid, Container } from '@material-ui/core';
 import { useStyles } from './styles';
 import Form from 'components/Form';
 import Card from 'components/Card';
+import Modal from 'components/Modal';
 
 const HomeView = props => {
-  const { file, card, handlerUploadBackground, handlerChangeForm } = props;
+  const {
+    file,
+    card,
+    handlerUploadBackground,
+    handlerChangeForm,
+    openModal,
+    onCloseModal,
+    imageModal,
+    onCropImage,
+  } = props;
   const classes = useStyles();
 
   return (
     <Container maxWidth="lg">
+      <Modal
+        open={openModal}
+        //onClose={onCloseModal}
+        image={imageModal}
+        onCropImage={onCropImage}
+      />
       <Grid container spacing={1}>
         <Grid item xs={7} className={classes.formContainer}>
           <h2>Main </h2>
