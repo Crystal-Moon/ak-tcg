@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useState } from 'react';
 import MainView from './MainView';
 
@@ -8,6 +7,7 @@ export function MainContainer() {
   const [modal, setModal] = useState(false);
   const [card, setCard] = useState({
     name: 'NickName',
+    title: '',
     level: 25,
     element: 'brutal',
     star: 1,
@@ -29,7 +29,6 @@ export function MainContainer() {
     reader.addEventListener(
       'load',
       function () {
-        //console.log('imagen loaded');
         setIncomingFile(prev => ({ ...prev, file: reader.result }));
         openModal();
       },
@@ -50,9 +49,7 @@ export function MainContainer() {
   function handlerChangeForm(event) {
     const key = event.target.name;
     const val = event.target.value;
-    //console.log('se setea', key, ':', val);
     setCard(prev => ({ ...prev, [key]: val }));
-    //console.log('card', card);
   }
 
   return (

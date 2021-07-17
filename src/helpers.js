@@ -46,7 +46,7 @@ const getStarFile = (n = 1) => {
   return STAR_FILES[`_${n}`];
 };
 
-const makeImage = card => {
+const makeImage = (card, isGif) => {
   console.log('card', card);
 
   const canvas = document.getElementById('boxing');
@@ -63,9 +63,12 @@ const makeImage = card => {
       )
     )
 
-    .then(() => write(ctx, card.title, { y: 400 }))
-    .then(() => write(ctx, card.name, { y: 430 }))
-    .then(() => write(ctx, card.level, { x: 53, y: 68, size: 35 }));
+    .then(() => write(ctx, card.title, { y: 422, font: '24px Nunito Sans' }))
+    .then(() => write(ctx, card.name, { y: 455, font: '24px Nunito Sans' }))
+    .then(() =>
+      write(ctx, card.level, { x: 53, y: 68, size: 35, font: '35px Open Sans' })
+    );
+  //.then(() => download(canvas)); // funciona bien :D
 
   /*
   composite(ctx, card.bg_uri, {});
@@ -76,8 +79,8 @@ const makeImage = card => {
   write(ctx, card.name, { x: 50, y: 150 });
 */
 };
-const write = async (ctx, text, { size = 24, x = 180, y }) => {
-  ctx.font = `${size}px sans-serif`;
+const write = async (ctx, text, { font, x = 180, y }) => {
+  ctx.font = font;
   ctx.strokeStyle = 'black';
   ctx.lineWidth = 3;
   ctx.textAlign = 'center';
@@ -97,13 +100,14 @@ const composite = (ctx, data, { x = 0, y = 0 }, name) =>
     image.src = data;
   });
 
-function download(blob, byte) {
-  //const blob = new Blob([byte], { type: 'image/jpg' });
-  const link = document.createElement('a');
-  link.href = window.URL.createObjectURL(blob);
-  const fileName = 'reportName';
-  link.download = fileName;
-  link.click();
+function download(canvas) {
+  canvas.toBlob(function (blob) {
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    const fileName = 'reportName';
+    link.download = fileName;
+    link.click();
+  });
 }
 
 export { ELEMENTS, getStarFile, getElementFile, makeImage };

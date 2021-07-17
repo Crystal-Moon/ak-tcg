@@ -1,9 +1,16 @@
 /* eslint-disable */
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useStyles } from './styles';
-import { Grid, IconButton, Button, Tooltip } from '@material-ui/core';
+import {
+  Grid,
+  IconButton,
+  Button,
+  Tooltip,
+  Menu,
+  MenuItem,
+} from '@material-ui/core';
 import TextField from './TextFieldStyled';
-import SelectStyled from './SelectStyled';
+import Select from './SelectStyled';
 import Icon from 'components/Icon';
 import { ELEMENTS, makeImage } from 'helpers';
 import editIcon from 'assets/icons/edit.svg';
@@ -17,7 +24,21 @@ export function FormStyled(props) {
     form,
   } = props;
   const { t } = useTranslation();
-  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  function handlerDownload() {
+    if (!form.bg_uri) return alert(t('components.form.alert'));
+    makeImage(form, form.star === 5);
+    closeMenu();
+  }
+
+  function openMenu(event) {
+    setAnchorEl(event.currentTarget);
+  }
+
+  function closeMenu() {
+    setAnchorEl(null);
+  }
 
   return (
     <Grid container direction="column">
@@ -26,11 +47,8 @@ export function FormStyled(props) {
           <TextField
             label={t('components.form.name')}
             name="name"
-            id="name"
             value={form.name}
-            type="text"
             onChange={onChangeForm}
-            fullWidth
             required
             error={!form.name}
           />
@@ -39,19 +57,15 @@ export function FormStyled(props) {
           <TextField
             label={t('components.form.title')}
             name="title"
-            id="title"
             value={form.title}
-            type="text"
             onChange={onChangeForm}
-            fullWidth
           />
         </Grid>
       </Grid>
       <Grid item container spacing={2}>
         <Grid item xs={4}>
-          <SelectStyled
+          <Select
             label={t('components.form.star')}
-            id="star"
             name="star"
             items={new Array(5)
               .fill('★')
@@ -64,22 +78,19 @@ export function FormStyled(props) {
           <TextField
             label={t('components.form.level')}
             name="level"
-            id="level"
             type="number"
             inputProps={{ min: 1, max: 99 }}
             value={form.level}
             onChange={onChangeForm}
             required
             error={!form.level}
-            fullWidth
           />
         </Grid>
 
         <Grid item xs={4}>
-          <SelectStyled
+          <Select
             label={t('components.form.element')}
             name="element"
-            id="element"
             items={ELEMENTS.map(e => ({
               lbl: t(`components.elements.${e}`),
               val: e,
@@ -94,8 +105,6 @@ export function FormStyled(props) {
           <TextField
             label={t('components.form.image')}
             name="fileName"
-            id="fileName"
-            variant="filled"
             value={fileName}
             onChange={onChangeForm}
             readOnly
@@ -109,12 +118,7 @@ export function FormStyled(props) {
             endIcon={
               fileName ? (
                 <Tooltip title={t('components.form.edit')}>
-                  <IconButton
-                    variant=""
-                    component="span"
-                    color="primary"
-                    onClick={handlerOpenModal}
-                  >
+                  <IconButton color="primary" onClick={handlerOpenModal}>
                     <Icon src={editIcon} />
                   </IconButton>
                 </Tooltip>
@@ -134,14 +138,31 @@ export function FormStyled(props) {
           />
         </Grid>
       </Grid>
-      <Grid item container>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => makeImage(form)}
-        >
-          Descargar
-        </Button>
+      <Grid item container justifyContent="center">
+        {form.star === 5 ? (
+          <div>
+            <Button variant="contained" color="primary" onClick={openMenu}>
+              {t('components.form.download')}
+            </Button>
+            <Menu
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={closeMenu}
+            >
+              <MenuItem onClick={handlerDownload}>
+                {t('components.form.jpg')}
+              </MenuItem>
+              <MenuItem onClick={handlerDownload}>
+                {t('components.form.gif')}
+              </MenuItem>
+            </Menu>
+          </div>
+        ) : (
+          <Button variant="contained" color="primary" onClick={handlerDownload}>
+            {t('components.form.download')}
+          </Button>
+        )}
       </Grid>
     </Grid>
   );

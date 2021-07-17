@@ -13,7 +13,10 @@
             "edit": "Edit",
             "element": "Element",
             "upload": "Upload",
-            "download": "Download Card"
+            "download": "Download Card",
+            "alert": "Please, upload an image!",
+            "gif": ".GIF (Animated image)",
+            "jpg": ".JPG (Simple image)"
         },
         "elements": {
             "brutal": "Physical",

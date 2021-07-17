@@ -3,7 +3,7 @@ export default function TextFieldStyled(props) {
   const {
     label,
     name,
-    type,
+    type = 'text',
     readOnly,
     value,
     startIcon,

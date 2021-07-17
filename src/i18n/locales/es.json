@@ -13,7 +13,10 @@
             "edit": "Editar",
             "element": "Elemento",
             "upload": "Subir Imagen",
-            "download": "Descargar Carta"
+            "download": "Descargar Carta",
+            "alert": "No hay imagen cargada!",
+            "gif": ".GIF (Imagen animada)",
+            "jpg": ".JPG (Imagen sencilla)"
         },
         "elements": {
             "brutal": "Brutal",
