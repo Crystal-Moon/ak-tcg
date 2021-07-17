@@ -1,12 +1,13 @@
-/* eslint-disable */
 import React, { useState } from 'react';
 import { Paper, Dialog, Slide, Button, Grid, Slider } from '@material-ui/core';
 import { useStyles } from './styles';
 import { useTranslation } from 'react-i18next';
 import ghost from 'assets/imgs/macro_0.png';
 import AvatarEditor from 'react-avatar-editor';
-import AdbIcon from '@material-ui/icons/Adb';
-//import img_example from 'assets/imgs/test1.jpg';
+import Icon from 'components/Icon';
+import zoomIn from 'assets/icons/zoom_in.svg';
+import zoomOut from 'assets/icons/zoom_out.svg';
+import rotateIcon from 'assets/icons/rotate.svg';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -27,6 +28,9 @@ export function ModalStyled(props) {
       className={classes.root}
     >
       <Paper elevation={3} className={classes.paper}>
+        <Grid container spacing={2} justifyContent="center">
+          <p>Mueve, gira y selecciona tu tarjeta</p>
+        </Grid>
         <Grid container direction="row" spacing={2}>
           <Grid item>
             <Grid
@@ -37,7 +41,7 @@ export function ModalStyled(props) {
               spacing={2}
             >
               <Grid item xs={1}>
-                <AdbIcon />
+                <Icon className={classes.iconZoom} src={zoomIn} />
               </Grid>
               <Grid item xs>
                 <Slider
@@ -50,11 +54,11 @@ export function ModalStyled(props) {
                 />
               </Grid>
               <Grid item xs={1}>
-                <AdbIcon />
+                <Icon className={classes.iconZoom} src={zoomOut} />
               </Grid>
             </Grid>
           </Grid>
-          <Grid item>
+          <Grid item className={classes.avatarContainer}>
             <div className={classes.ghost}></div>
             <AvatarEditor
               ref={editorRef}
@@ -68,9 +72,14 @@ export function ModalStyled(props) {
             />
           </Grid>
         </Grid>
-        <Grid container direction="row" spacing={2}>
+        <Grid
+          container
+          direction="row"
+          spacing={2}
+          justifyContent="space-between"
+        >
           <Grid item xs={1}>
-            <AdbIcon />
+            <Icon className={classes.iconRotate} src={rotateIcon} />
           </Grid>
           <Grid item xs>
             <Slider

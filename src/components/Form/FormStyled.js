@@ -1,26 +1,12 @@
 /* eslint-disable */
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useStyles } from './styles';
-import {
-  Grid,
-  Input,
-  //TextField,
-  InputLabel,
-  Select,
-  MenuItem,
-  FormControl,
-  InputAdornment,
-  IconButton,
-  Button,
-  OutlinedInput,
-  InputBase,
-  Icon,
-} from '@material-ui/core';
+import { Grid, IconButton, Button, Tooltip } from '@material-ui/core';
 import TextField from './TextFieldStyled';
 import SelectStyled from './SelectStyled';
-import AdbIcon from '@material-ui/icons/Adb';
+import Icon from 'components/Icon';
 import { ELEMENTS } from 'helpers';
+import editIcon from 'assets/icons/edit.svg';
 
 export function FormStyled(props) {
   const {
@@ -123,14 +109,16 @@ export function FormStyled(props) {
             }
             endIcon={
               fileName ? (
-                <IconButton
-                  variant=""
-                  component="span"
-                  color="primary"
-                  onClick={handlerOpenModal}
-                >
-                  <AdbIcon />
-                </IconButton>
+                <Tooltip title={t('components.form.edit')}>
+                  <IconButton
+                    variant=""
+                    component="span"
+                    color="primary"
+                    onClick={handlerOpenModal}
+                  >
+                    <Icon src={editIcon} />
+                  </IconButton>
+                </Tooltip>
               ) : null
             }
           />

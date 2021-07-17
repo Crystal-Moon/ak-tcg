@@ -71,13 +71,13 @@ export const useStyles = makeStyles({
     top: 0,
     zIndex: 100,
     animation: '$shine 4.5s infinite ease',
-    '& div': {
+    '& div.shine': {
       /* eslint-disable no-dupe-keys */
       height: 185,
       width: 505,
       background: 'rgb(255,255,255)',
       background:
-        'linear-gradient(180deg, rgba(255,255,255,0.8) 1%, rgba(255,255,255,0) 100%)',
+        'linear-gradient(180deg, rgba(255,255,255,0.9) 1%, rgba(255,255,255,0) 100%)',
     },
   },
   hole: {

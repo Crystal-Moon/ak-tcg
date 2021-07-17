@@ -21,10 +21,10 @@ export function CardStyled(props) {
       <div className={classnames(css.capa, css.txt, css.lvl)}>{level}</div>
       <div className={classnames(css.capa, css.txt, css.title)}>{title}</div>
       <div className={classnames(css.capa, css.txt, css.name)}>{name}</div>
-      {star === 5 && (
+      {bg_uri && star === 5 && (
         <div>
           <div className={classnames(css.capa, css.cromo)}>
-            <div className="shine1"></div>
+            <div className="shine"></div>
           </div>
           <div className={classnames(css.capa, css.hole)}>
             <Cromo image={bg_uri} />

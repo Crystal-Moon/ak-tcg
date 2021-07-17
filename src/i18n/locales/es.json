@@ -10,6 +10,7 @@
             "name": "Nombre",
             "title": "Título (opcional)",
             "image": "Imagen",
+            "edit": "Editar",
             "element": "Elemento",
             "upload": "Subir Imagen",
             "download": "Descargar Carta"

@@ -1,10 +1,9 @@
-/* eslint-disable */
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles({
   root: {
     overflow: 'auto',
-    //height: 'max-content'
+    '& p': { margin: 0, marginBottom: '0.5em' },
     '& div.MuiDialog-container': {
       height: 'max-content',
     },
@@ -28,5 +27,15 @@ export const useStyles = makeStyles({
     backgroundPosition: 'center center',
     pointerEvents: 'none',
   }),
-  avatarContainer: {},
+  avatarContainer: {
+    '& canvas': {
+      cursor: 'move !important',
+    },
+  },
+  iconRotate: {
+    height: '1.5em',
+  },
+  iconZoom: {
+    height: '2em',
+  },
 });
