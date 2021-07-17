@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles({
@@ -51,9 +50,11 @@ export const useStyles = makeStyles({
   },
   title: {
     bottom: 79,
+    zIndex: 200,
   },
   name: {
     bottom: 46,
+    zIndex: 200,
   },
   lvl: {
     width: 64,
@@ -69,8 +70,9 @@ export const useStyles = makeStyles({
     transition: 'all 4s ease',
     top: 0,
     zIndex: 100,
-    animation: `$shine 4.5s infinite ease`,
+    animation: '$shine 4.5s infinite ease',
     '& div': {
+      /* eslint-disable no-dupe-keys */
       height: 185,
       width: 505,
       background: 'rgb(255,255,255)',
