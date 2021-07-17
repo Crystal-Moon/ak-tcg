@@ -1,13 +1,10 @@
-/* eslint-disable */
 import { TextField, InputAdornment } from '@material-ui/core';
 export default function TextFieldStyled(props) {
   const {
     label,
     name,
-    defaultValue,
     type,
-    id,
-    readOnly = false,
+    readOnly,
     value,
     startIcon,
     endIcon,
@@ -20,9 +17,8 @@ export default function TextFieldStyled(props) {
   return (
     <TextField
       label={label}
-      id={id}
+      id={`${label}_id`}
       name={name}
-      //defaultValue={defaultValue}
       value={value}
       variant="outlined"
       size="small"

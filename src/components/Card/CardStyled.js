@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import { useStyles } from './styles';
-import { ELEMENT_FILES, STAR_FILES } from 'helpers';
+import { getElementFile, getStarFile } from 'helpers';
 import Cromo from 'components/Cromo';
 
 export function CardStyled(props) {
@@ -13,10 +13,10 @@ export function CardStyled(props) {
         <img src={bg_uri} />
       </div>
       <div className={classnames(css.capa, css.star)}>
-        <img src={STAR_FILES[`_${star}`]} />
+        <img src={getStarFile(star)} />
       </div>
       <div className={classnames(css.capa, css.element)}>
-        <img src={ELEMENT_FILES[element]} />
+        <img src={getElementFile(element)} />
       </div>
       <div className={classnames(css.capa, css.txt, css.lvl)}>{level}</div>
       <div className={classnames(css.capa, css.txt, css.title)}>{title}</div>

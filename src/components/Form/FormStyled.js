@@ -5,7 +5,7 @@ import { Grid, IconButton, Button, Tooltip } from '@material-ui/core';
 import TextField from './TextFieldStyled';
 import SelectStyled from './SelectStyled';
 import Icon from 'components/Icon';
-import { ELEMENTS } from 'helpers';
+import { ELEMENTS, makeImage } from 'helpers';
 import editIcon from 'assets/icons/edit.svg';
 
 export function FormStyled(props) {
@@ -95,7 +95,6 @@ export function FormStyled(props) {
             label={t('components.form.image')}
             name="fileName"
             id="fileName"
-            //className={}
             variant="filled"
             value={fileName}
             onChange={onChangeForm}
@@ -136,8 +135,11 @@ export function FormStyled(props) {
         </Grid>
       </Grid>
       <Grid item container>
-        // aqui condicional si es 5 start es un select con jpg y gif
-        <Button variant="contained" color="primary">
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => makeImage(form)}
+        >
           Descargar
         </Button>
       </Grid>
