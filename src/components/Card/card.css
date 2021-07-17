@@ -1,0 +1,48 @@
+#cromo{
+    position: absolute;
+    height: 185px;
+    width: 505px;
+    display: block;
+    transition: all 4s ease;
+    top: 0px;
+    transform: rotate(45deg);
+    z-index: 100;
+  
+  
+  
+  
+    /*transform: translateX(-285px) rotate(159deg) translateY(-620px);*/
+
+
+    animation-name: cromoo; 
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+
+
+    background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 1%, rgba(255,255,255,0) 100%);
+  }
+  #cromo>div{
+    /*background-color: rgba(255,255,255,0.3);*/
+    /*background-color: red;*/
+    /* height: 10px; */
+    background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 1%, rgba(255,255,255,0) 100%);
+    width: 608px;
+  }
+ 
+  
+  
+  
+  
+  /* The animation code */
+  @keyframes cromoo {
+    0%   {transform: translateX(-285px) rotate(159deg) translateY(-620px);}
+    100% {transform: translateX(0px) rotate(159deg) translateY(275px);}
+  }
+  
+  @keyframes nonee {
+    0%   {top: 0px;}
+    100% {top: 0px;}
+  }

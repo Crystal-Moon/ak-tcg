@@ -8,6 +8,7 @@ export const useStyles = makeStyles({
     width: 360,
     border: 'none',
     margin: 'auto',
+    overflow: 'hidden',
   },
   capa: {
     position: 'absolute',
@@ -32,6 +33,7 @@ export const useStyles = makeStyles({
     right: 12,
     marginTop: 'auto',
     marginLeft: 'auto',
+    zIndex: 55,
   },
   txt: {
     height: 'max-content',
@@ -41,11 +43,11 @@ export const useStyles = makeStyles({
     color: 'white',
     marginLeft: 'auto',
     marginRight: 'auto',
-    fontSize: 24, // subir a 24 si se necesita ancho
+    fontSize: 24,
     fontWeight: 500,
-    // '-webkit-text-stroke': '1px black',
     textShadow:
       '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+    zIndex: 55,
   },
   title: {
     bottom: 79,
@@ -60,5 +62,27 @@ export const useStyles = makeStyles({
     fontSize: 35,
     fontFamily: '"Open Sans", sans-serif',
     fontWeight: 400,
+  },
+  cromo: {
+    height: 185,
+    width: 505,
+    transition: 'all 4s ease',
+    top: 0,
+    zIndex: 100,
+    animation: `$shine 4.5s infinite ease`,
+    '& div': {
+      height: 185,
+      width: 505,
+      background: 'rgb(255,255,255)',
+      background:
+        'linear-gradient(180deg, rgba(255,255,255,0.8) 1%, rgba(255,255,255,0) 100%)',
+    },
+  },
+  hole: {
+    zIndex: 150,
+  },
+  '@keyframes shine': {
+    '0%': { transform: 'translateX(-285px) rotate(159deg) translateY(-620px)' },
+    '100%': { transform: 'translateX(0px) rotate(159deg) translateY(275px)' },
   },
 });
