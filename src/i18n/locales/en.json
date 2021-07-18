@@ -5,13 +5,13 @@
             "title": "Aura Kingdom's Player"
         },
         "form": {
-            "star": "Stars",
+            "star": "Rarity",
             "level": "Level",
             "name": "Name",
             "title": "Title (optional)",
             "image": "Image",
             "edit": "Edit",
-            "element": "Element",
+            "element": "Attribute",
             "upload": "Upload",
             "download": "Download Card",
             "alert": "Please, upload an image!",

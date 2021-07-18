@@ -32,8 +32,8 @@ export const useStyles = makeStyles({
   },
   element: {
     width: 56,
-    height: 56,
-    bottom: 10,
+    height: 55,
+    bottom: 11,
     right: 9,
     marginTop: 'auto',
     marginLeft: 'auto',
@@ -70,26 +70,20 @@ export const useStyles = makeStyles({
     fontWeight: 400,
   },
   cromo: {
-    height: 185,
-    width: 505,
+    height: 300,
+    width: 448,
     transition: 'all 4s ease',
     top: 0,
     zIndex: 100,
     animation: '$shine 4.5s infinite ease',
-    '& div.shine': {
-      /* eslint-disable no-dupe-keys */
-      height: 185,
-      width: 505,
-      background: 'rgb(255,255,255)',
-      background:
-        'linear-gradient(180deg, rgba(255,255,255,0.9) 1%, rgba(255,255,255,0) 100%)',
-    },
+    background:
+      'linear-gradient(180deg, rgba(255,255,255,0.9) 1%, rgba(255,255,255,0) 100%)',
   },
   hole: {
     zIndex: 150,
   },
   '@keyframes shine': {
-    '0%': { transform: 'translateX(-285px) rotate(159deg) translateY(-620px)' },
-    '100%': { transform: 'translateX(0px) rotate(159deg) translateY(275px)' },
+    '0%': { transform: 'translateX(-258px) rotate(159deg) translateY(-620px)' },
+    '100%': { transform: 'translateX(0px) rotate(159deg) translateY(415px)' },
   },
 });

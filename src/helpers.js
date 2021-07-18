@@ -76,7 +76,7 @@ const makeImage = (card, isGif) => {
       composite(
         ctx,
         getElementFile(card.element),
-        { x: 238, y: 366, xz: 56, yz: 56 },
+        { x: 238, y: 366, xz: 56, yz: 55 },
         'element'
       )
     )

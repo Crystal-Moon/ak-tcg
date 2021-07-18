@@ -28,6 +28,7 @@ const HomeView = props => {
         handlerCropImage={onCropImage}
         editorRef={editorRef}
       />
+
       <Grid container spacing={1}>
         <Grid item xs={7} className={classes.formContainer}>
           <h2>Main </h2>
