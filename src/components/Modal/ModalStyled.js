@@ -65,8 +65,8 @@ export function ModalStyled(props) {
               rotate={rotate}
               image={image}
               scale={scale}
-              height={512}
-              width={360}
+              height={432}
+              width={303}
               border={0}
               crossOrigin="anonymous"
             />
@@ -81,7 +81,7 @@ export function ModalStyled(props) {
           <Grid item xs={1}>
             <Icon className={classes.iconRotate} src={rotateIcon} />
           </Grid>
-          <Grid item xs>
+          <Grid item xs={10}>
             <Slider
               max={360}
               value={rotate}

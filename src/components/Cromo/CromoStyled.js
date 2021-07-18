@@ -1,6 +1,11 @@
 export function CromoStyled(props = {}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="360" height="512">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="303"
+      height="432"
+      viewBox="0 0 360 512"
+    >
       <defs>
         <pattern
           id="img1"

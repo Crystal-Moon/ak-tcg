@@ -18,8 +18,8 @@ export const useStyles = makeStyles({
     marginRight: '0.5em',
   },
   ghost: ({ img }) => ({
-    height: 512,
-    width: 360,
+    height: 432,
+    width: 303,
     position: 'absolute',
     backgroundImage: `url(${img})`,
     backgroundRepeat: 'no-repeat',

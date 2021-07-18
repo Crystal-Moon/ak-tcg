@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 export const useStyles = makeStyles({
   root: {
     position: 'relative',
-    height: 512,
-    width: 360,
+    height: 432,
+    width: 303,
     border: 'none',
     margin: 'auto',
     overflow: 'hidden',
@@ -13,6 +13,11 @@ export const useStyles = makeStyles({
     position: 'absolute',
     height: '100%',
     width: '100%',
+
+    '& img': {
+      height: 'inherit',
+      width: 'inherit',
+    },
   },
   bg: {
     backgroundColor: '#777777',
@@ -26,10 +31,10 @@ export const useStyles = makeStyles({
     },
   },
   element: {
-    width: 64,
-    height: 64,
-    bottom: 14,
-    right: 12,
+    width: 56,
+    height: 56,
+    bottom: 10,
+    right: 9,
     marginTop: 'auto',
     marginLeft: 'auto',
     zIndex: 55,
@@ -42,25 +47,25 @@ export const useStyles = makeStyles({
     color: 'white',
     marginLeft: 'auto',
     marginRight: 'auto',
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 500,
     textShadow:
       '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
     zIndex: 55,
   },
   title: {
-    bottom: 79,
+    bottom: 68,
     zIndex: 200,
   },
   name: {
-    bottom: 46,
+    bottom: 38,
     zIndex: 200,
   },
   lvl: {
-    width: 64,
-    left: 21,
-    top: 33,
-    fontSize: 35,
+    width: 57,
+    left: 18,
+    top: 27,
+    fontSize: 30,
     fontFamily: '"Open Sans", sans-serif',
     fontWeight: 400,
   },

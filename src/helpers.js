@@ -52,21 +52,39 @@ const makeImage = (card, isGif) => {
   const canvas = document.getElementById('boxing');
   const ctx = canvas.getContext('2d');
 
-  composite(ctx, card.bg_uri, {}, 'bg')
-    .then(() => composite(ctx, getStarFile(card.star), {}, 'star'))
+  composite(
+    ctx,
+    card.bg_uri,
+    {
+      xz: 303,
+      yz: 432,
+    },
+    'bg'
+  )
+    .then(() =>
+      composite(
+        ctx,
+        getStarFile(card.star),
+        {
+          xz: 303,
+          yz: 432,
+        },
+        'star'
+      )
+    )
     .then(() =>
       composite(
         ctx,
         getElementFile(card.element),
-        { x: 284, y: 434 },
+        { x: 238, y: 366, xz: 56, yz: 56 },
         'element'
       )
     )
 
-    .then(() => write(ctx, card.title, { y: 422, font: '24px Nunito Sans' }))
-    .then(() => write(ctx, card.name, { y: 455, font: '24px Nunito Sans' }))
+    .then(() => write(ctx, card.title, { y: 354, font: '20px Nunito Sans' }))
+    .then(() => write(ctx, card.name, { y: 385, font: '20px Nunito Sans' }))
     .then(() =>
-      write(ctx, card.level, { x: 53, y: 68, size: 35, font: '35px Open Sans' })
+      write(ctx, card.level, { x: 45, y: 60, size: 35, font: '30px Open Sans' })
     );
   //.then(() => download(canvas)); // funciona bien :D
 
@@ -79,7 +97,7 @@ const makeImage = (card, isGif) => {
   write(ctx, card.name, { x: 50, y: 150 });
 */
 };
-const write = async (ctx, text, { font, x = 180, y }) => {
+const write = async (ctx, text, { font, x = 151, y }) => {
   ctx.font = font;
   ctx.strokeStyle = 'black';
   ctx.lineWidth = 3;
@@ -89,11 +107,11 @@ const write = async (ctx, text, { font, x = 180, y }) => {
   ctx.fillText(String(text), x, y);
   console.log('write', text);
 };
-const composite = (ctx, data, { x = 0, y = 0 }, name) =>
+const composite = (ctx, data, { x = 0, y = 0, xz = 303, yz = 432 }, name) =>
   new Promise(done => {
     const image = new Image();
     image.onload = function () {
-      ctx.drawImage(image, x, y);
+      ctx.drawImage(image, x, y, xz, yz);
       done();
       console.log('drawed', name);
     };
