@@ -29,7 +29,10 @@
         },
         "modal": {
             "crop": "Crop and select",
-            "cancel": "cancel"
+            "cancel": "cancel",
+            "title": "Title",
+            "ask": "Download an image with the following data?",
+            "animated": "Download an animated image with the following data?"
         }
     },
     "pages": {

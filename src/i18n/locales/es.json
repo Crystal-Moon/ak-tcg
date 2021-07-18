@@ -29,7 +29,10 @@
         },
         "modal": {
             "crop": "Seleccionar",
-            "cancel": "Cancelar"
+            "cancel": "Cancelar",
+            "title": "Título",
+            "ask": "¿Descargar una imagen con los siguentes datos?",
+            "animated": "¿Descargar una imagen animada con los siguentes datos?"
         }
     },
     "pages": {
