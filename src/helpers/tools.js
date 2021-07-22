@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { getStarFile, getElementFile } from './constants';
 const adjustFiles = card => {
   return [
@@ -19,11 +20,11 @@ const adjustText = card => {
   return [
     {
       txt: card.title,
-      opts: { y: 354, font: '20px Nunito Sans' },
+      opts: { y: 358, font: '20px Nunito Sans' },
     },
     {
       txt: card.name,
-      opts: { y: 385, font: '20px Nunito Sans' },
+      opts: { y: 387, font: '20px Nunito Sans' },
     },
     {
       txt: card.level,
@@ -36,6 +37,7 @@ const funcComposite = ctx => ({ file, opts = {} }) =>
   new Promise(done => {
     const { x = 0, y = 0, xz, yz } = opts;
     const image = new Image();
+    //image.crossOrigin = 'Anonymous';
     image.onload = function () {
       ctx.drawImage(image, x, y, xz, yz);
       done();

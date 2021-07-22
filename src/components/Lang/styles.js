@@ -2,14 +2,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles({
   root: {
-    flexDirection: 'row',
+    flexDirection: 'row !important',
   },
   input: {
     position: 'absolute',
     opacity: 0,
   },
   btn: {
-    padding: '0.3rem',
+    padding: '0.3rem !important',
   },
   label: {
     display: 'block',

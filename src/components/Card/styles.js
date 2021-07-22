@@ -54,7 +54,7 @@ export const useStyles = makeStyles({
     zIndex: 55,
   },
   title: {
-    bottom: 68,
+    bottom: 67,
     zIndex: 200,
   },
   name: {

@@ -14,12 +14,12 @@ export function DialogStyled(props) {
           {t(isGif ? 'components.modal.animated' : 'components.modal.ask')}
           <hr />
           <b>{t('components.form.name')}:</b> {form.name}
-          <hr />
+          <br />
           <b>{t('components.modal.title')}:</b> {form.title}
-          <hr />
+          <br />
           <b>{t('components.form.level')}:</b> {form.level}
-          <hr />
-          <b>{t('components.form.star')}:</b> {form.star}★<hr />
+          <br />
+          <b>{t('components.form.star')}:</b> {form.star}★<br />
           <b>{t('components.form.element')}:</b>{' '}
           {t(`components.elements.${form.element}`)}
           <hr />

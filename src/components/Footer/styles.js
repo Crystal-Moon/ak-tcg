@@ -5,6 +5,7 @@ export const useStyles = makeStyles({
   root: {
     backgroundColor: '#00e2b1',
     fontSize: '0.9em',
+    borderTop: '3px solid white',
   },
   footer: {
     paddingTop: '1em',
@@ -26,6 +27,7 @@ export const useStyles = makeStyles({
     },
   },
   CM_logo: {
+    color: '#da86ef',
     marginLeft: '0.2em',
     marginRight: '0.5em',
   },

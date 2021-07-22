@@ -20,7 +20,7 @@ export function LangStyled() {
   }
 
   return (
-    <FormControl component="fieldset" className={classes.root}>
+    <FormControl className={classes.root}>
       {LANG.map(({ lang, flag }, k) => (
         <div key={k}>
           <input
