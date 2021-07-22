@@ -14,9 +14,13 @@
             "element": "Attribute",
             "upload": "Upload",
             "download": "Download Card",
-            "alert": "Please, upload an image!",
             "gif": ".GIF (Animated image)",
-            "jpg": ".JPG (Simple image)"
+            "jpg": ".JPG (Simple image)",
+            "alert": {
+                "bg_uri": "Please, upload an image!",
+                "name": "Card Name is empty!",
+                "level": "Minimum level is 1"
+            }
         },
         "elements": {
             "brutal": "Physical",
@@ -37,13 +41,20 @@
     },
     "pages": {
         "header": {
-            "title": "Title of app"
+            "title": "Carta de Duelo Maker"
         },
         "main": {
-            "some": "some main en"
+            "form": "some main en",
+            "preview": "Preview"
         },
         "footer": {
-            "someF": "some footer en"
+            "aeria": "All game content and assets are trademarks and copyrights of X-Legend® or Aeria Games®. This site is not affiliated with X-Legend or Aeria Games.",
+            "lucro": "Non-profit web application created. All information and images was taken from",
+            "projects": "Other projects",
+            "calculator": "Eidolon experience calculator",
+            "desafio": "Divine Trial (ES)",
+            "visits": "Visits",
+            "thank": "Thank you"
         }
     }
 }

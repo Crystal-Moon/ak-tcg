@@ -14,9 +14,13 @@
             "element": "Elemento",
             "upload": "Subir Imagen",
             "download": "Descargar Carta",
-            "alert": "No hay imagen cargada!",
             "gif": ".GIF (Imagen animada)",
-            "jpg": ".JPG (Imagen sencilla)"
+            "jpg": ".JPG (Imagen sencilla)",
+            "alert": {
+                "bg_uri": "No hay imagen cargada!",
+                "name": "La carta debe tener algún nombre",
+                "level": "Nivel minimo es 1"
+            }
         },
         "elements": {
             "brutal": "Brutal",
@@ -37,13 +41,20 @@
     },
     "pages": {
         "header": {
-            "title": "Titulo de app"
+            "title": "Duel Card Maker"
         },
         "main": {
-            "some": "some main"
+            "form": "some main",
+            "preview": "Vista Previa"
         },
         "footer": {
-            "someF": "some footer es"
+            "aeria": "Todo el contenido y los activos del juego son marcas comerciales y derechos de autor de X-Legend® o Aeria Games®. Este sitio no está afiliado a X-Legend o Aeria Games.",
+            "lucro": "Aplicación web creada sin fines de lucro. Toda información e imagenes son tomadas de",
+            "projects": "Otros proyectos",
+            "calculator": "Calculadora de experiencia de Eidolon",
+            "desafio": "Desafío Divino - ES",
+            "visits": "Contador de visitas",
+            "thank": "Gracias"
         }
     }
 }
