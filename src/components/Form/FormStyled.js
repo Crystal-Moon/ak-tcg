@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -8,6 +9,8 @@ import {
   Menu,
   MenuItem,
 } from '@material-ui/core';
+import classnames from 'classnames';
+import { useStyles } from './styles';
 import TextField from './TextFieldStyled';
 import Select from './SelectStyled';
 import Icon from 'components/Icon';
@@ -28,6 +31,7 @@ export function FormStyled(props) {
   const [loading, setLoading] = useState(false);
   const [dialog, setDialog] = useState();
   const [isGif, setIsGif] = useState();
+  const classes = useStyles();
 
   const openMenu = event => setAnchorEl(event.currentTarget);
   const closeMenu = () => setAnchorEl(null);
@@ -35,7 +39,9 @@ export function FormStyled(props) {
   const closeDialog = () => setDialog(false);
 
   function handlerDownload(_isGif) {
-    if (!form.bg_uri) return alert(t('components.form.alert'));
+    if (!form.bg_uri) return alert(t('components.form.alert.bg_uri'));
+    if (!form.name.trim()) return alert(t('components.form.alert.name'));
+    if (!form.level) return alert(t('components.form.alert.level'));
     setIsGif(_isGif);
     closeMenu();
     openDialog();
@@ -73,7 +79,6 @@ export function FormStyled(props) {
               name="name"
               value={form.name}
               onChange={onChangeForm}
-              required
               error={!form.name}
             />
           </Grid>
@@ -131,10 +136,18 @@ export function FormStyled(props) {
               name="fileName"
               value={fileName}
               onChange={onChangeForm}
+              classes={{
+                adornedStart: classes.adornedStart,
+                adornedEnd: classes.adornedEnd,
+              }}
               readOnly
               startIcon={
                 <label htmlFor="input_file">
-                  <Button variant="text" component="span" color="primary">
+                  <Button
+                    variant="contained"
+                    component="span"
+                    className={classes.btnInput}
+                  >
                     {t('components.form.upload')}
                   </Button>
                 </label>
@@ -142,7 +155,10 @@ export function FormStyled(props) {
               endIcon={
                 fileName ? (
                   <Tooltip title={t('components.form.edit')}>
-                    <IconButton color="primary" onClick={handlerOpenModal}>
+                    <IconButton
+                      onClick={handlerOpenModal}
+                      className={classnames(classes.btnInput, classes.btnEdit)}
+                    >
                       <Icon src={editIcon} />
                     </IconButton>
                   </Tooltip>
@@ -162,7 +178,12 @@ export function FormStyled(props) {
             />
           </Grid>
         </Grid>
-        <Grid item container justifyContent="center">
+        <Grid
+          item
+          container
+          justifyContent="center"
+          className={classes.download}
+        >
           {form.star === 5 ? (
             <div>
               <Button variant="contained" color="primary" onClick={openMenu}>
@@ -177,7 +198,7 @@ export function FormStyled(props) {
                 <MenuItem onClick={() => handlerDownload()}>
                   {t('components.form.jpg')}
                 </MenuItem>
-                <MenuItem onClick={() => handlerDownload(1)}>
+                <MenuItem onClick={() => handlerDownload(true)}>
                   {t('components.form.gif')}
                 </MenuItem>
               </Menu>

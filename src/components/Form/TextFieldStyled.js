@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { TextField, InputAdornment } from '@material-ui/core';
 export default function TextFieldStyled(props) {
   const {
@@ -10,6 +11,8 @@ export default function TextFieldStyled(props) {
     endIcon,
     onChange,
     inputProps,
+    className,
+    classes,
     required,
     error,
   } = props;
@@ -25,12 +28,14 @@ export default function TextFieldStyled(props) {
       margin="dense"
       type={type}
       error={error}
+      className={className}
       required={required}
       onChange={onChange}
       fullWidth
       inputProps={inputProps}
       InputProps={{
         readOnly: readOnly,
+        classes: classes,
         startAdornment: startIcon ? (
           <InputAdornment position="start">{startIcon}</InputAdornment>
         ) : null,

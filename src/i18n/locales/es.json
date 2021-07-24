@@ -9,7 +9,7 @@
             "level": "Nivel",
             "name": "Nombre",
             "title": "Título (opcional)",
-            "image": "Imagen",
+            "image": "Imagen de fondo",
             "edit": "Editar",
             "element": "Elemento",
             "upload": "Subir Imagen",
@@ -35,8 +35,8 @@
             "crop": "Seleccionar",
             "cancel": "Cancelar",
             "title": "Título",
-            "ask": "¿Descargar una imagen con los siguentes datos?",
-            "animated": "¿Descargar una imagen animada con los siguentes datos?"
+            "ask": "¿Descargar una imagen?",
+            "animated": "¿Descargar una imagen animada?"
         }
     },
     "pages": {

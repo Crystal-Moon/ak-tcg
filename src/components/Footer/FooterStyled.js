@@ -15,7 +15,9 @@ export function FooterStyled(props) {
             <p>{t('pages.footer.aeria')}</p>
             <p>
               {t('pages.footer.lucro')}{' '}
-              <a href="https://www.aurakingdom-db.com">aurakingdom-db.com</a>
+              <a href="https://www.aurakingdom-db.com" target="_blank">
+                aurakingdom-db.com
+              </a>
             </p>
           </Grid>
           <Grid item container justifyContent="space-between">
