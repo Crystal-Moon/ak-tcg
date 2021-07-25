@@ -16,10 +16,15 @@ import Select from './SelectStyled';
 import Icon from 'components/Icon';
 import Dialog from 'components/Dialog';
 import { ELEMENTS, makeImage } from 'helpers';
-import editIcon from 'assets/icons/edit.svg';
+import uploadIcon from 'assets/icons/upload.svg';
+//import editIcon from 'assets/icons/edit.svg';
+//import editIcon from 'assets/icons/edit_1.svg';
+//import editIcon from 'assets/icons/edit_2.svg';
+import editIcon from 'assets/icons/edit_3.svg';
 
 export function FormStyled(props) {
   const {
+    isSm,
     fileName,
     onChangeFile,
     onChangeForm,
@@ -73,7 +78,7 @@ export function FormStyled(props) {
 
       <Grid container direction="column">
         <Grid item container spacing={2} alignItems="center">
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <TextField
               label={t('components.form.name')}
               name="name"
@@ -82,7 +87,7 @@ export function FormStyled(props) {
               error={!form.name}
             />
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={12} sm={8}>
             <TextField
               label={t('components.form.title')}
               name="title"
@@ -92,7 +97,7 @@ export function FormStyled(props) {
           </Grid>
         </Grid>
         <Grid item container spacing={2}>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Select
               label={t('components.form.star')}
               name="star"
@@ -103,7 +108,7 @@ export function FormStyled(props) {
               onChange={onChangeForm}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <TextField
               label={t('components.form.level')}
               name="level"
@@ -116,7 +121,7 @@ export function FormStyled(props) {
             />
           </Grid>
 
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Select
               label={t('components.form.element')}
               name="element"
@@ -143,13 +148,22 @@ export function FormStyled(props) {
               readOnly
               startIcon={
                 <label htmlFor="input_file">
-                  <Button
-                    variant="contained"
-                    component="span"
-                    className={classes.btnInput}
-                  >
-                    {t('components.form.upload')}
-                  </Button>
+                  {!isSm ? (
+                    <Button
+                      variant="contained"
+                      component="span"
+                      className={classes.btnInput}
+                    >
+                      {t('components.form.upload')}
+                    </Button>
+                  ) : (
+                    <IconButton
+                      component="span"
+                      className={classnames(classes.btnInput, classes.btnEdit)}
+                    >
+                      <Icon src={uploadIcon} />
+                    </IconButton>
+                  )}
                 </label>
               }
               endIcon={
@@ -178,15 +192,14 @@ export function FormStyled(props) {
             />
           </Grid>
         </Grid>
-        <Grid
-          item
-          container
-          justifyContent="center"
-          className={classes.download}
-        >
+        <Grid item container justifyContent="center">
           {form.star === 5 ? (
             <div>
-              <Button variant="contained" color="primary" onClick={openMenu}>
+              <Button
+                variant="contained"
+                onClick={openMenu}
+                className={classes.download}
+              >
                 {t('components.form.download')}
               </Button>
               <Menu
@@ -208,6 +221,7 @@ export function FormStyled(props) {
               variant="contained"
               color="primary"
               onClick={() => handlerDownload()}
+              className={classes.download}
             >
               {t('components.form.download')}
             </Button>

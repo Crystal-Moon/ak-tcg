@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles({
@@ -13,7 +14,7 @@ export const useStyles = makeStyles({
     position: 'absolute',
     height: '100%',
     width: '100%',
-
+    top:0,
     '& img': {
       height: 'inherit',
       width: 'inherit',
@@ -54,11 +55,13 @@ export const useStyles = makeStyles({
     zIndex: 55,
   },
   title: {
-    bottom: 67,
+    top: 339,
+    //bottom: 66,
     zIndex: 200,
   },
   name: {
-    bottom: 38,
+    top: 369,
+    //bottom: 37,
     zIndex: 200,
   },
   lvl: {

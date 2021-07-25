@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import { Paper, Dialog, Slide, Button, Grid, Slider } from '@material-ui/core';
 import { useStyles } from './styles';
@@ -15,10 +16,17 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export function ModalStyled(props) {
   const { t } = useTranslation();
-  const { open, image, handlerCloseModal, handlerCropImage, editorRef } = props;
+  const {
+    open,
+    image,
+    handlerCloseModal,
+    handlerCropImage,
+    editorRef,
+    isSm,
+  } = props;
   const [rotate, setRotate] = useState(0);
   const [scale, setScale] = useState(1);
-  const classes = useStyles({ img: ghost });
+  const classes = useStyles({ isSm, img: ghost });
 
   return (
     <Dialog
@@ -31,21 +39,22 @@ export function ModalStyled(props) {
         <Grid container spacing={2} justifyContent="center">
           <p>Mueve, gira y selecciona tu tarjeta</p>
         </Grid>
-        <Grid container direction="row" spacing={2}>
+        <Grid container direction={isSm ? 'column' : 'row'} spacing={2}>
           <Grid item>
             <Grid
               item
               container
-              direction="column"
+              direction={isSm ? 'row-reverse' : 'column'}
+              justifyContent="space-between"
               style={{ height: '100%' }}
               spacing={2}
             >
-              <Grid item xs={1}>
+              <Grid item xs={Number(isSm) + 1}>
                 <Icon className={classes.iconZoom} src={zoomIn} />
               </Grid>
-              <Grid item xs>
+              <Grid item xs={!isSm + 8}>
                 <Slider
-                  orientation="vertical"
+                  orientation={isSm ? 'horizontal' : 'vertical'}
                   value={scale}
                   min={1}
                   max={4}
@@ -53,7 +62,7 @@ export function ModalStyled(props) {
                   onChange={(event, newValue) => setScale(newValue)}
                 />
               </Grid>
-              <Grid item xs={1}>
+              <Grid item xs={Number(isSm) + 1}>
                 <Icon className={classes.iconZoom} src={zoomOut} />
               </Grid>
             </Grid>

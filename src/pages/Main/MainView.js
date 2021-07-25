@@ -1,4 +1,5 @@
 /* eslint-disable */
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Grid, Container } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { useStyles } from './styles';
@@ -19,21 +20,30 @@ const HomeView = props => {
     onCropImage,
   } = props;
   const { t } = useTranslation();
-  const classes = useStyles();
+  const isCardMd = useMediaQuery('(max-width:1030px)');
+  const isMd = useMediaQuery('(max-width:960px)');
+  const isSm = useMediaQuery('(max-width:600px)');
+
+  const classes = useStyles({ isMd, isCardMd });
+
+  //if(isSM){
+  //  return <div>NO available celular</div>
+  //}
 
   return (
     <div className={classes.root}>
       <Container maxWidth="lg">
         <Modal
           open={openModal}
+          isSm={isSm}
           handlerCloseModal={handlerCloseModal}
           image={file.file}
           handlerCropImage={onCropImage}
           editorRef={editorRef}
         />
 
-        <Grid container spacing={1} className={classes.mainContainer}>
-          <Grid item xs={7}>
+        <Grid container spacing={8} className={classes.mainContainer} xs={11}>
+          <Grid item xs={12} md={7}>
             <h2>Main {t('pages.main.form')}</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
@@ -46,12 +56,13 @@ const HomeView = props => {
             <Form
               fileName={file.name}
               form={card}
+              isSm={isSm}
               handlerOpenModal={handlerOpenModal}
               onChangeFile={handlerUploadBackground}
               onChangeForm={handlerChangeForm}
             />
           </Grid>
-          <Grid item xs={5} className={classes.cardContainer}>
+          <Grid item xs={12} md={5} className={classes.cardContainer}>
             <h2>{t('pages.main.preview')}</h2>
             <Card card={card} />
           </Grid>

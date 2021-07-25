@@ -5,9 +5,12 @@ export const useStyles = makeStyles({
   btnInput: {
     backgroundColor: '#d9e0f5',
     width: 'max-content',
-    color: '#0064ad',
+    color: '#6123be',
     paddingLeft: 14,
     paddingRight: 14,
+    "&:hover": {
+      backgroundColor: 'rgb(202, 189, 235, 0.7)'
+    }
   },
   btnEdit: {
     padding: 6,
@@ -22,6 +25,11 @@ export const useStyles = makeStyles({
     padding: 0,
   },
   download: {
+    color: 'white',
+    backgroundColor: '#6122be',
     marginTop: '0.9em',
+    '&:hover': {
+      backgroundColor: '#5329bf'
+    }
   },
 });
