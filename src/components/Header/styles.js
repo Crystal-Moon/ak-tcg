@@ -4,6 +4,7 @@ export const useStyles = makeStyles({
   root: {
     flexDirection: 'row',
     backgroundColor: '#deffed',
+    padding: '0.5em',
   },
   logo: {
     display: 'inline-block',

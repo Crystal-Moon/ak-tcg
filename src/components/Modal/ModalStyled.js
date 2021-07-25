@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Paper, Dialog, Slide, Button, Grid, Slider } from '@material-ui/core';
 import { useStyles } from './styles';
 import { useTranslation } from 'react-i18next';
-import ghost from 'assets/imgs/macro_0.png';
 import AvatarEditor from 'react-avatar-editor';
 import Icon from 'components/Icon';
 import zoomIn from 'assets/icons/zoom_in.svg';
@@ -26,7 +25,7 @@ export function ModalStyled(props) {
   } = props;
   const [rotate, setRotate] = useState(0);
   const [scale, setScale] = useState(1);
-  const classes = useStyles({ isSm, img: ghost });
+  const classes = useStyles({ isSm });
 
   return (
     <Dialog
@@ -37,7 +36,7 @@ export function ModalStyled(props) {
     >
       <Paper elevation={3} className={classes.paper}>
         <Grid container spacing={2} justifyContent="center">
-          <p>Mueve, gira y selecciona tu tarjeta</p>
+          <p>{t('components.modal.description')}</p>
         </Grid>
         <Grid container direction={isSm ? 'column' : 'row'} spacing={2}>
           <Grid item>
@@ -74,8 +73,8 @@ export function ModalStyled(props) {
               rotate={rotate}
               image={image}
               scale={scale}
-              height={432}
-              width={303}
+              height={!isSm ? 432 : 324}
+              width={!isSm ? 303 : 227}
               border={0}
               crossOrigin="anonymous"
             />

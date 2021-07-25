@@ -1,4 +1,5 @@
 /* eslint-disable */
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useStyles } from './styles';
 import { Grid, Container } from '@material-ui/core';
 import logo from 'assets/icons/logo.png';
@@ -7,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 export function HeaderStyled(props) {
   const { t } = useTranslation();
+  const isMd = useMediaQuery('(max-width:960px)');
   const classes = useStyles();
 
   return (
@@ -16,7 +18,7 @@ export function HeaderStyled(props) {
           container
           spacing={1}
           direction="row"
-          justifyContent="space-between"
+          justifyContent={isMd ? 'space-around' : 'space-between'}
           alignItems="center"
         >
           <Grid item>

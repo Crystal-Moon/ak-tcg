@@ -76,8 +76,8 @@ export function FormStyled(props) {
         onCancel={closeDialog}
       />
 
-      <Grid container direction="column">
-        <Grid item container spacing={2} alignItems="center">
+      <Grid container direction="column" spacing={1}>
+        <Grid item container spacing={1} alignItems="center">
           <Grid item xs={12} sm={4}>
             <TextField
               label={t('components.form.name')}
@@ -96,7 +96,7 @@ export function FormStyled(props) {
             />
           </Grid>
         </Grid>
-        <Grid item container spacing={2}>
+        <Grid item container spacing={1}>
           <Grid item xs={12} sm={4}>
             <Select
               label={t('components.form.star')}
@@ -134,7 +134,7 @@ export function FormStyled(props) {
             />
           </Grid>
         </Grid>
-        <Grid item container spacing={2} direction="row">
+        <Grid item container spacing={1} direction="row">
           <Grid item xs={12}>
             <TextField
               label={t('components.form.image')}

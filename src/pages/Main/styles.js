@@ -25,7 +25,7 @@ export const useStyles = makeStyles({
     if (isCardMd) {
       style.height = '100%';
     }
-    
+
     return style;
   },
   mainContainer: {
@@ -35,17 +35,26 @@ export const useStyles = makeStyles({
     paddingRight: 0,
     margin: 'auto',
   },
-  cardContainer: ({isMd, isSm})=>{
-    const style={
-    minWidth: 'max-content',
-    paddingLeft: '0px !important',
-    //paddingRight: '32px !important',
-    }
-    if(isMd){
+  cardContainer: ({ isMd, isSm }) => {
+    const style = {
+      minWidth: 'max-content',
+      paddingLeft: '0px !important',
+      paddingRight: '20px !important',
+      '&>div': {
+        // margin: 32,
+        overflow: 'auto',
+        // width: 'calc(100vw - 32px)',
+        margin: 0,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        maxWidth: 'calc(85vw - 32px)',
+      },
+    };
+    if (isMd) {
       style.padding = 0;
-      style.margin = 'auto'
+      style.margin = 'auto';
     }
-   /* if(isSm){
+    /* if(isSm){
       style.minWidth = 0
     }*/
 

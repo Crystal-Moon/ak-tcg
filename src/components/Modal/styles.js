@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import ghost from 'assets/imgs/macro_0.png';
 
 export const useStyles = makeStyles({
   root: {
@@ -17,17 +18,25 @@ export const useStyles = makeStyles({
     marginLeft: '0.5em',
     marginRight: '0.5em',
   },
-  ghost: ({ img }) => ({
-    height: 432,
-    width: 303,
-    position: 'absolute',
-    backgroundImage: `url(${img})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100% 100%',
-    backgroundPosition: 'center center',
-    pointerEvents: 'none',
-  }),
+  ghost: ({ isSm }) => {
+    const style = {
+      height: 432,
+      width: 303,
+      position: 'absolute',
+      backgroundImage: `url(${ghost})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '100% 100%',
+      backgroundPosition: 'center center',
+      pointerEvents: 'none',
+    };
+    if (isSm) {
+      style.height = 324;
+      style.width = 227;
+    }
+    return style;
+  },
   avatarContainer: {
+    margin: 'auto',
     '& canvas': {
       cursor: 'move !important',
     },
