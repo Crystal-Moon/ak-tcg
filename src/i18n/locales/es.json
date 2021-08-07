@@ -1,9 +1,5 @@
 {
     "components": {
-        "card": {
-            "name": "NickName",
-            "title": "Jugador de Aura Kingdom"
-        },
         "form": {
             "star": "Rareza",
             "level": "Nivel",
@@ -32,6 +28,7 @@
             "dark": "Oscuridad"
         },
         "modal": {
+            "description": "some description",
             "crop": "Seleccionar",
             "cancel": "Cancelar",
             "title": "Título",
@@ -44,8 +41,9 @@
             "title": "Duel Card Maker"
         },
         "main": {
-            "form": "some main",
-            "preview": "Vista Previa"
+            "form": "Crea tu carta de duelo",
+            "preview": "Vista Previa",
+            "description": " ¿Alguna vez quisiste tener tu propio pj en una carta? ¿O hacer un mazo de todos tus amigos? \n Puedes crear tu propia carta de duelo personalizada para compartir en redes sociales o donde mas te guste! Elije el fondo, los detalles y descarga la imagen. Podrás elegir cartas sencillas o incluso con efecto de 'brillo', tal cual las cartas dentro del juego!"
         },
         "footer": {
             "aeria": "Todo el contenido y los activos del juego son marcas comerciales y derechos de autor de X-Legend® o Aeria Games®. Este sitio no está afiliado a X-Legend o Aeria Games.",

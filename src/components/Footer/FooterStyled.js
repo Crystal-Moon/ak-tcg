@@ -1,4 +1,5 @@
 /* eslint-disable */
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTranslation } from 'react-i18next';
 import { Grid, Container } from '@material-ui/core';
 import { useStyles } from './styles';
@@ -6,7 +7,8 @@ import Icon from 'components/Icon';
 
 export function FooterStyled(props) {
   const { t } = useTranslation();
-  const classes = useStyles();
+  const isSm = useMediaQuery('(max-width:600px)');
+  const classes = useStyles({ isSm });
   return (
     <div className={classes.root}>
       <Container maxWidth="lg" className={classes.footer}>
@@ -21,17 +23,22 @@ export function FooterStyled(props) {
             </p>
           </Grid>
           <Grid item container justifyContent="space-between">
-            <Grid item alignContent="center">
-              <div className={classes.contadorContainer}>
-                <span>{t('pages.footer.visits')}:</span>
-                <div
-                  id="sfckj3hrfmdd23u7s48fyuxp1ajsj1eg5me"
-                  className={classes.contador}
-                >
-                  <img style={{ height: 26, width: 104 }} />
-                </div>
-                <span>{t('pages.footer.thank')} &#128156;!</span>
+            <Grid
+              item
+              alignContent="center"
+              className={classes.contadorContainer}
+            >
+              <span>{t('pages.footer.visits')}:</span>
+              <div
+                id="sfc1gfkg1zmqcpslxhpulylektsd4c4r21r"
+                className={classes.contador}
+              >
+                <img
+                  style={{ height: 26, width: 104 }}
+                  src="https://www.contadorvisitasgratis.com/cache_image/319.png"
+                />
               </div>
+              <span>{t('pages.footer.thank')} &#128156;!</span>
             </Grid>
             <Grid item className={classes.contadorContainer}>
               <p>
@@ -60,7 +67,13 @@ export function FooterStyled(props) {
           justifyContent="space-between"
           direction="row"
         >
-          <Grid item container xs={6}>
+          <Grid
+            item
+            container
+            xs={12}
+            sm={6}
+            justifyContent={isSm ? 'center' : 'flex-start'}
+          >
             <span>Made with ♥ by</span>
             <div className={classes.CM_logo}>
               <Icon
@@ -79,7 +92,13 @@ export function FooterStyled(props) {
               <span>2021</span>
             </div>
           </Grid>
-          <Grid item xs={6} container justifyContent="flex-end">
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            container
+            justifyContent={isSm ? 'center' : 'flex-end'}
+          >
             <span>Powered by</span>
             <div>
               <Icon

@@ -1,8 +1,6 @@
 /* eslint-disable */
 import { makeStyles } from '@material-ui/core/styles';
-import ukn_4 from 'assets/imgs/unknown_4.png';
-import ukn_14 from 'assets/imgs/unknown_14.png';
-import ukn_15 from 'assets/imgs/unknown_15.png';
+import background from 'assets/imgs/background.png';
 
 export const useStyles = makeStyles({
   root: ({ isCardMd }) => {
@@ -10,13 +8,14 @@ export const useStyles = makeStyles({
       '& p, & h2': {
         margin: 0,
         marginBottom: '0.7em',
+        whiteSpace: 'break-spaces',
       },
       '& h2': {
         textAlign: 'center',
       },
       paddingBottom: '3em',
       paddingTop: '4em',
-      backgroundImage: `url(${ukn_14})`,
+      backgroundImage: `url(${background})`,
       backgroundSize: 'cover',
       height: '90vh',
       minHeight: '38em',
@@ -25,25 +24,21 @@ export const useStyles = makeStyles({
     if (isCardMd) {
       style.height = '100%';
     }
-
     return style;
   },
   mainContainer: {
-    backgroundColor: '#e4ebff',
+    backgroundColor: '#f4fff6',
     borderRadius: '0.5em',
-    //padding: '2.7em',
     paddingRight: 0,
     margin: 'auto',
   },
-  cardContainer: ({ isMd, isSm }) => {
+  cardContainer: ({ isMd }) => {
     const style = {
       minWidth: 'max-content',
       paddingLeft: '0px !important',
       paddingRight: '20px !important',
       '&>div': {
-        // margin: 32,
         overflow: 'auto',
-        // width: 'calc(100vw - 32px)',
         margin: 0,
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -54,10 +49,6 @@ export const useStyles = makeStyles({
       style.padding = 0;
       style.margin = 'auto';
     }
-    /* if(isSm){
-      style.minWidth = 0
-    }*/
-
     return style;
   },
 });

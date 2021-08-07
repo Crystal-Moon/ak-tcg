@@ -49,15 +49,8 @@ const HomeView = props => {
           sm={11}
         >
           <Grid item xs={12} md={7}>
-            <h2>Main {t('pages.main.form')}</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              vitae cursus est. Vivamus eget placerat tortor, non scelerisque
-              ante. Nam lacus nibh, finibus vitae gravida quis, euismod et
-              tellus. Etiam facilisis lectus et arcu fringilla, et fermentum dui
-              imperdiet. In rutrum interdum iaculis. Ut eu euismod mauris,
-              euismod placerat felis.
-            </p>
+            <h2>{t('pages.main.form')}</h2>
+            <p>{t('pages.main.description')}</p>
             <Form
               fileName={file.name}
               form={card}

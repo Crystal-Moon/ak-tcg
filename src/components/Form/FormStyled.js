@@ -17,10 +17,7 @@ import Icon from 'components/Icon';
 import Dialog from 'components/Dialog';
 import { ELEMENTS, makeImage } from 'helpers';
 import uploadIcon from 'assets/icons/upload.svg';
-//import editIcon from 'assets/icons/edit.svg';
-//import editIcon from 'assets/icons/edit_1.svg';
-//import editIcon from 'assets/icons/edit_2.svg';
-import editIcon from 'assets/icons/edit_3.svg';
+import editIcon from 'assets/icons/edit.svg';
 
 export function FormStyled(props) {
   const {

@@ -1,9 +1,5 @@
 {
     "components": {
-        "card": {
-            "name": "NickName",
-            "title": "Aura Kingdom's Player"
-        },
         "form": {
             "star": "Rarity",
             "level": "Level",
@@ -32,6 +28,7 @@
             "dark": "Dark"
         },
         "modal": {
+            "description": "some description",
             "crop": "Crop and select",
             "cancel": "cancel",
             "title": "Title",
@@ -44,8 +41,9 @@
             "title": "Carta de Duelo Maker"
         },
         "main": {
-            "form": "some main en",
-            "preview": "Preview"
+            "form": "Create your Duel Crad",
+            "preview": "Preview",
+            "description": " Have you ever wanted to have your own character on a Duel Card? Or make a deck of all your friends? \n You can create your own personalized Duel Card to share on social media or wherever you want! Choose the background, details and download the image. You can choose simple card or even with a 'shine' effect, just like the cards in the game!"
         },
         "footer": {
             "aeria": "All game content and assets are trademarks and copyrights of X-Legend® or Aeria Games®. This site is not affiliated with X-Legend or Aeria Games.",

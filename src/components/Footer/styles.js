@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles({
   root: {
-    backgroundColor: '#00e2b1',
+    backgroundColor: '#31D6B2',
     fontSize: '0.9em',
     borderTop: '3px solid white',
   },
@@ -31,11 +31,18 @@ export const useStyles = makeStyles({
     marginLeft: '0.2em',
     marginRight: '0.5em',
   },
-  contadorContainer: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    '&>*': { display: 'inline-block' },
+  contadorContainer: ({ isSm }) => {
+    const style = {
+      display: 'flex',
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+      '&>*': { display: 'inline-block' },
+    };
+    if (isSm) {
+      style.justifyContent = 'center';
+      style.width = '100%';
+    }
+    return style;
   },
   contador: {
     margin: '0.2em',

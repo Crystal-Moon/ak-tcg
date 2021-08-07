@@ -9,7 +9,7 @@ export const useStyles = makeStyles({
     opacity: 0,
   },
   btn: {
-    padding: '0.3rem !important',
+    padding: '0.2rem !important',
   },
   label: {
     display: 'block',
@@ -27,7 +27,7 @@ export const useStyles = makeStyles({
   },
   checked: {
     border: '0.2em solid',
-    borderColor: 'green',
+    borderColor: '#3f51b5',
     margin: 0,
     paddingTop: 0,
   },
