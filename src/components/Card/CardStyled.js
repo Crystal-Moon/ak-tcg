@@ -22,14 +22,17 @@ export function CardStyled(props) {
         {level}
       </div>
       <div className={classnames(classes.capa, classes.txt, classes.title)}>
-        {title}
+        {title.replace(/[ ]+/g, ' ').trim()}
       </div>
       <div className={classnames(classes.capa, classes.txt, classes.name)}>
-        {name}
+        {name.replace(/[ ]+/g, ' ').trim()}
       </div>
       {bg_uri && star === 5 && (
         <div>
-          <div className={classnames(classes.capa, classes.cromo)}></div>
+          <div className={classnames(classes.capa, classes.cromo)}>
+            <div className='orange'></div>
+            <div className='white'></div>
+          </div>
           <div className={classnames(classes.capa, classes.hole)}>
             <Hole image={bg_uri} />
           </div>

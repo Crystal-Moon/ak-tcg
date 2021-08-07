@@ -14,7 +14,7 @@ export const useStyles = makeStyles({
     position: 'absolute',
     height: '100%',
     width: '100%',
-    top:0,
+    top: 0,
     '& img': {
       height: 'inherit',
       width: 'inherit',
@@ -73,20 +73,30 @@ export const useStyles = makeStyles({
     fontWeight: 400,
   },
   cromo: {
-    height: 300,
-    width: 448,
-    transition: 'all 4s ease',
+    height: 350,
+    width: 550,
+    transition: 'all 7s ease',
     top: 0,
     zIndex: 100,
-    animation: '$shine 4.5s infinite ease',
-    background:
-      'linear-gradient(180deg, rgba(255,255,255,0.9) 1%, rgba(255,255,255,0) 100%)',
+    animation: '$shine 7s infinite ease',
+    '&>div.orange': {
+      width: 550,
+      height: 100,
+      background:
+        'linear-gradient(180deg, rgba(255,255,255,0) 1%, rgb(154, 114, 25, 0.6) 100%)',
+    },
+    '&>div.white': {
+      width: 550,
+      height: 250,
+      background:
+        'linear-gradient(180deg, rgba(255, 242, 195,0.9) 1%, rgba(255,255,255,0) 90%)',
+    },
   },
   hole: {
     zIndex: 150,
   },
   '@keyframes shine': {
-    '0%': { transform: 'translateX(-258px) rotate(159deg) translateY(-620px)' },
-    '100%': { transform: 'translateX(0px) rotate(159deg) translateY(415px)' },
+    '0%': { transform: 'translateX(-258px) rotate(159deg) translateY(-500px)' },
+    '100%': { transform: 'translateX(0px) rotate(159deg) translateY(580px)' },
   },
 });
