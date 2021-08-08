@@ -28,15 +28,15 @@ export async function makeGif(cardImage, cb) {
 }
 
 const buildMakerFrame = (encoder, ctx, back_img, h, w) =>
-  new Promise(done => {
+  new Promise(resolve => {
     const back = new Image();
     //back.crossOrigin = 'Anonymous';
     back.src = back_img;
     back.onload = function () {
       const clean = cleaner(ctx, h, w);
-      done(
+      resolve(
         shine =>
-          new Promise(ok => {
+          new Promise(done => {
             clean();
             ctx.drawImage(back, 0, 0, w, h);
             const img = new Image();
@@ -45,7 +45,7 @@ const buildMakerFrame = (encoder, ctx, back_img, h, w) =>
             img.onload = function () {
               ctx.drawImage(img, 0, 0, w, h);
               encoder.addFrame(ctx);
-              ok();
+              done();
             };
           })
       );

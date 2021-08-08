@@ -24,9 +24,9 @@ const makeImage = (card, isGif, cb) => {
   const texts = adjustText(card);
   //console.log({ files, texts });
 
-  const imagePromise = files.reduce((acc, obj) => composite(obj), 0);
+  const imagePromise = files.reduce((_, obj) => composite(obj), 0);
   const cardPromise = imagePromise.then(() =>
-    texts.reduce((acc, obj) => write(obj), 0)
+    texts.reduce((_, obj) => write(obj), 0)
   );
 
   cardPromise.then(() =>

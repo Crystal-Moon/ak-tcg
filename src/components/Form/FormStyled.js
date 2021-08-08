@@ -41,9 +41,13 @@ export function FormStyled(props) {
   const closeDialog = () => setDialog(false);
 
   function handlerDownload(_isGif) {
+    for (let k in form) {
+      if (k !== 'bg_uri') form[k] = String(form[k]).replace(/[ ]+/g, ' ').trim();
+    }
     if (!form.bg_uri) return alert(t('components.form.alert.bg_uri'));
-    if (!form.name.trim()) return alert(t('components.form.alert.name'));
+    if (!form.name) return alert(t('components.form.alert.name'));
     if (!form.level) return alert(t('components.form.alert.level'));
+
     setIsGif(_isGif);
     closeMenu();
     openDialog();
