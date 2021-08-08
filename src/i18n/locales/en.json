@@ -28,7 +28,7 @@
             "dark": "Dark"
         },
         "modal": {
-            "description": "some description",
+            "description": "Move, zoom or rotate the image to get the best scene",
             "crop": "Crop and select",
             "cancel": "cancel",
             "title": "Title",
@@ -38,7 +38,7 @@
     },
     "pages": {
         "header": {
-            "title": "Carta de Duelo Maker"
+            "title": "AK - Duel Card Generator"
         },
         "main": {
             "form": "Create your Duel Crad",

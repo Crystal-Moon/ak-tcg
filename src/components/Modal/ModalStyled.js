@@ -56,7 +56,7 @@ export function ModalStyled(props) {
                   orientation={isSm ? 'horizontal' : 'vertical'}
                   value={scale}
                   min={1}
-                  max={4}
+                  max={5}
                   step={0.01}
                   onChange={(event, newValue) => setScale(newValue)}
                 />

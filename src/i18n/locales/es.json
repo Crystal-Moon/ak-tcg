@@ -28,7 +28,7 @@
             "dark": "Oscuridad"
         },
         "modal": {
-            "description": "some description",
+            "description": "Mueve, acerca o gira la imagen para obtener la mejor escena",
             "crop": "Seleccionar",
             "cancel": "Cancelar",
             "title": "Título",
@@ -38,12 +38,12 @@
     },
     "pages": {
         "header": {
-            "title": "Duel Card Maker"
+            "title": "AK - Generador de Cartas de Duelo"
         },
         "main": {
             "form": "Crea tu carta de duelo",
             "preview": "Vista Previa",
-            "description": " ¿Alguna vez quisiste tener tu propio pj en una carta? ¿O hacer un mazo de todos tus amigos? \n Puedes crear tu propia carta de duelo personalizada para compartir en redes sociales o donde mas te guste! Elije el fondo, los detalles y descarga la imagen. Podrás elegir cartas sencillas o incluso con efecto de 'brillo', tal cual las cartas dentro del juego!"
+            "description": " ¿Alguna vez quisiste tener tu propio pj en una carta? ¿O hacer un mazo de todos tus amigos? \n Ahora puedes crear tu propia carta de duelo personalizada, para compartir en redes sociales o donde mas te guste! Elije el fondo, los detalles y descarga la imagen. Podrás elegir cartas sencillas o incluso con efecto de 'brillo', tal cual las cartas dentro del juego!"
         },
         "footer": {
             "aeria": "Todo el contenido y los activos del juego son marcas comerciales y derechos de autor de X-Legend® o Aeria Games®. Este sitio no está afiliado a X-Legend o Aeria Games.",

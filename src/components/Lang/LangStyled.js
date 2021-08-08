@@ -16,7 +16,7 @@ export function LangStyled() {
 
   function onChangeLang(lang) {
     i18n.changeLanguage(lang);
-    localStorage.setItem('lenguage', lang);
+    localStorage.setItem('language', lang);
   }
 
   return (

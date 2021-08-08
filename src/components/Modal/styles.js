@@ -4,7 +4,12 @@ import ghost from 'assets/imgs/macro_0.png';
 export const useStyles = makeStyles({
   root: {
     overflow: 'auto',
-    '& p': { margin: 0, marginBottom: '0.5em' },
+    '& p': {
+      margin: 0,
+      marginBottom: '0.5em',
+      textAlign: 'center',
+      width: 303,
+    },
     '& div.MuiDialog-container': {
       height: 'max-content',
     },

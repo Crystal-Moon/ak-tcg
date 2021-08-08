@@ -5,6 +5,7 @@ export const useStyles = makeStyles({
     flexDirection: 'row',
     backgroundColor: '#9DCCC2',
     padding: '0.5em',
+    fontSize: '0.8rem',
   },
   logo: {
     display: 'inline-block',
@@ -14,7 +15,8 @@ export const useStyles = makeStyles({
   },
   title: {
     fontFamily: '"Galada", cursive',
-    fontSize: '1.8rem',
     margin: '0.3rem',
+    textAlign: 'center',
+    color: '#263273',
   },
 });

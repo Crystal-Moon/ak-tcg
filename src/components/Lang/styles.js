@@ -26,7 +26,7 @@ export const useStyles = makeStyles({
     height: '1em',
   },
   checked: {
-    border: '0.2em solid',
+    border: '0.2rem solid',
     borderColor: '#3f51b5',
     margin: 0,
     paddingTop: 0,
