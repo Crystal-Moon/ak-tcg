@@ -12,7 +12,7 @@ export async function makeGif(cardImage, cb) {
   const ctx = canvas.getContext('2d');
 
   const encoder = new GIFEncoder(w, h);
-  encoder.setDelay(75);
+  encoder.setDelay(120);
   encoder.start();
   const addFrame = await buildMakerFrame(encoder, ctx, cardImage, h, w);
 

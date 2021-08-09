@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles({
@@ -56,12 +55,10 @@ export const useStyles = makeStyles({
   },
   title: {
     top: 339,
-    //bottom: 66,
     zIndex: 200,
   },
   name: {
     top: 369,
-    //bottom: 37,
     zIndex: 200,
   },
   lvl: {
@@ -75,21 +72,21 @@ export const useStyles = makeStyles({
   cromo: {
     height: 350,
     width: 550,
-    transition: 'all 7s ease',
+    transition: 'all 4s ease',
     top: 0,
     zIndex: 100,
-    animation: '$shine 7s infinite ease',
+    animation: '$shine 10s infinite ease',
     '&>div.orange': {
       width: 550,
-      height: 100,
+      height: 80,
       background:
-        'linear-gradient(180deg, rgba(255,255,255,0) 1%, rgb(154, 114, 25, 0.6) 100%)',
+        'linear-gradient(180deg, rgba(255,255,255,0) 29%, rgb(165 90 26 / 36%) 81%)',
     },
     '&>div.white': {
       width: 550,
       height: 250,
       background:
-        'linear-gradient(180deg, rgba(255, 242, 195,0.9) 1%, rgba(255,255,255,0) 90%)',
+        'linear-gradient(180deg, rgb(253,236,176,0.9) 1%, rgba(255,255,255,0) 90%)',
     },
   },
   hole: {
