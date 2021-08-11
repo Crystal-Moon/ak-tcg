@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState } from 'react';
 import { Paper, Dialog, Slide, Button, Grid, Slider } from '@material-ui/core';
 import { useStyles } from './styles';
@@ -48,7 +47,7 @@ export function ModalStyled(props) {
               style={{ height: '100%' }}
               spacing={2}
             >
-              <Grid item xs={Number(isSm) + 1}>
+              <Grid item xs={isSm + 1}>
                 <Icon className={classes.iconZoom} src={zoomIn} />
               </Grid>
               <Grid item xs={!isSm + 8}>
@@ -61,7 +60,7 @@ export function ModalStyled(props) {
                   onChange={(event, newValue) => setScale(newValue)}
                 />
               </Grid>
-              <Grid item xs={Number(isSm) + 1}>
+              <Grid item xs={isSm + 1}>
                 <Icon className={classes.iconZoom} src={zoomOut} />
               </Grid>
             </Grid>

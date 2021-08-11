@@ -8,7 +8,7 @@ export const useStyles = makeStyles({
       margin: 0,
       marginBottom: '0.5em',
       textAlign: 'center',
-      width: 303,
+      maxWidth: 320,
     },
     '& div.MuiDialog-container': {
       height: 'max-content',

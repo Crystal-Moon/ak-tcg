@@ -1,4 +1,3 @@
-/* eslint-disable*/
 import GIFEncoder from 'gif-encoder-2';
 import { download } from './tools';
 import { shine_frames } from 'assets/imgs/shine';
@@ -30,7 +29,6 @@ export async function makeGif(cardImage, cb) {
 const buildMakerFrame = (encoder, ctx, back_img, h, w) =>
   new Promise(resolve => {
     const back = new Image();
-    //back.crossOrigin = 'Anonymous';
     back.src = back_img;
     back.onload = function () {
       const clean = cleaner(ctx, h, w);
@@ -40,7 +38,6 @@ const buildMakerFrame = (encoder, ctx, back_img, h, w) =>
             clean();
             ctx.drawImage(back, 0, 0, w, h);
             const img = new Image();
-            //img.crossOrigin = 'Anonymous';
             img.src = shine;
             img.onload = function () {
               ctx.drawImage(img, 0, 0, w, h);

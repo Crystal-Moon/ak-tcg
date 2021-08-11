@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { TextField, InputAdornment } from '@material-ui/core';
 export default function TextFieldStyled(props) {
   const {

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Grid, Container } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
@@ -26,7 +25,6 @@ const HomeView = props => {
   const isMd = useMediaQuery('(max-width:960px)');
   const isSm = useMediaQuery('(max-width:600px)');
   const isXs = useMediaQuery('(max-width:392px)');
-
   const classes = useStyles({ isMd, isCardMd });
 
   return (

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useStyles } from './styles';
 import { Grid, Container } from '@material-ui/core';
@@ -6,7 +5,7 @@ import logo from 'assets/icons/logo.png';
 import Lang from 'components/Lang';
 import { useTranslation } from 'react-i18next';
 
-export function HeaderStyled(props) {
+export function HeaderStyled() {
   const { t } = useTranslation();
   const isMd = useMediaQuery('(max-width:960px)');
   const classes = useStyles();

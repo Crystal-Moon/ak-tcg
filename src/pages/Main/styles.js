@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { makeStyles } from '@material-ui/core/styles';
 import background from 'assets/imgs/background.png';
 

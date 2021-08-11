@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -41,8 +40,9 @@ export function FormStyled(props) {
   const closeDialog = () => setDialog(false);
 
   function handlerDownload(_isGif) {
-    for (let k in form) {
-      if (k !== 'bg_uri') form[k] = String(form[k]).replace(/[ ]+/g, ' ').trim();
+    for (const k in form) {
+      if (k !== 'bg_uri')
+        form[k] = String(form[k]).replace(/[ ]+/g, ' ').trim();
     }
     if (!form.bg_uri) return alert(t('components.form.alert.bg_uri'));
     if (!form.name) return alert(t('components.form.alert.name'));
@@ -60,7 +60,7 @@ export function FormStyled(props) {
 
   function downloadGif() {
     setLoading(true);
-    makeImage(form, isGif, () => {
+    makeImage(form, () => {
       closeDialog();
       setLoading(false);
     });
@@ -194,7 +194,7 @@ export function FormStyled(props) {
           </Grid>
         </Grid>
         <Grid item container justifyContent="center">
-          {form.star === 5 ? (
+          {form.star == 5 ? (
             <div>
               <Button
                 variant="contained"

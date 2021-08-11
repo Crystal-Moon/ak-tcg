@@ -1,4 +1,3 @@
-/* eslint-disable */
 import {
   adjustFiles,
   adjustText,
@@ -8,10 +7,8 @@ import {
 } from './tools';
 import { makeGif } from './gifer';
 
-const makeImage = (card, isGif, cb) => {
-  console.log('card', { card, isGif, cb });
+const makeImage = (card, cb_gif) => {
   const canvas = document.createElement('canvas');
-  //const canvas = document.getElementById('boxing');
   const w = 303,
     h = 432;
   canvas.width = w;
@@ -22,7 +19,6 @@ const makeImage = (card, isGif, cb) => {
 
   const files = adjustFiles(card);
   const texts = adjustText(card);
-  //console.log({ files, texts });
 
   const imagePromise = files.reduce((_, obj) => composite(obj), 0);
   const cardPromise = imagePromise.then(() =>
@@ -30,8 +26,8 @@ const makeImage = (card, isGif, cb) => {
   );
 
   cardPromise.then(() =>
-    isGif
-      ? makeGif(canvas.toDataURL(), cb)
+    cb_gif
+      ? makeGif(canvas.toDataURL(), cb_gif)
       : canvas.toBlob(blob => download(blob, 'jpg'))
   );
 };

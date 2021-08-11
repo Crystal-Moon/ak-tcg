@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { getStarFile, getElementFile } from './constants';
 const adjustFiles = card => {
   return [
@@ -37,7 +36,6 @@ const funcComposite = ctx => ({ file, opts = {} }) =>
   new Promise(done => {
     const { x = 0, y = 0, xz, yz } = opts;
     const image = new Image();
-    //image.crossOrigin = 'Anonymous';
     image.onload = function () {
       ctx.drawImage(image, x, y, xz, yz);
       done();
@@ -59,14 +57,10 @@ const funcWrite = ctx => ({ txt, opts = {} }) =>
   });
 
 const download = (blob, ext) => {
-  console.log('descargado', `ak_tcg_${Date.now()}.${ext}`);
-
-  /*
   const link = document.createElement('a');
   link.href = window.URL.createObjectURL(blob);
   link.download = `ak_tcg_${Date.now()}.${ext}`;
   link.click();
-  */
 };
 
 export { adjustFiles, adjustText, funcComposite, funcWrite, download };

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles({
@@ -8,9 +7,9 @@ export const useStyles = makeStyles({
     color: '#6123be',
     paddingLeft: 14,
     paddingRight: 14,
-    "&:hover": {
-      backgroundColor: 'rgb(202, 189, 235, 0.7)'
-    }
+    '&:hover': {
+      backgroundColor: 'rgb(202, 189, 235, 0.7)',
+    },
   },
   btnEdit: {
     padding: 6,
@@ -29,7 +28,7 @@ export const useStyles = makeStyles({
     backgroundColor: '#6122be',
     marginTop: '0.9em',
     '&:hover': {
-      backgroundColor: '#5329bf'
-    }
+      backgroundColor: '#5329bf',
+    },
   },
 });
