@@ -1,11 +1,10 @@
-/* eslint-disable */
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTranslation } from 'react-i18next';
 import { Grid, Container } from '@material-ui/core';
 import { useStyles } from './styles';
 import Icon from 'components/Icon';
 
-export function FooterStyled(props) {
+export function FooterStyled() {
   const { t } = useTranslation();
   const isSm = useMediaQuery('(max-width:600px)');
   const classes = useStyles({ isSm });
@@ -33,10 +32,18 @@ export function FooterStyled(props) {
                 id="sfc1gfkg1zmqcpslxhpulylektsd4c4r21r"
                 className={classes.contador}
               >
-                <img
-                  style={{ height: 26, width: 104 }}
-                  src="https://www.contadorvisitasgratis.com/cache_image/319.png"
-                />
+                <a
+                  href="https://www.contadorvisitasgratis.com/geozoom.php?c=1gfkg1zmqcpslxhpulylektsd4c4r21r&base=counter5&type_clic=1"
+                  title="contadorvisitasgratis"
+                >
+                  <img
+                    style={{ height: 26, width: 104 }}
+                    src="https://counter5.stat.ovh/private/contadorvisitasgratis.php?c=1gfkg1zmqcpslxhpulylektsd4c4r21r"
+                    border="0"
+                    title="contadorvisitasgratis"
+                    alt="contadorvisitasgratis"
+                  />
+                </a>
               </div>
               <span>{t('pages.footer.thank')} &#128156;!</span>
             </Grid>
