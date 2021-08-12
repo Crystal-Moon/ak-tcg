@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import background from 'assets/imgs/background.png';
 
 export const useStyles = makeStyles({
   root: ({ isCardMd }) => {
@@ -14,7 +13,7 @@ export const useStyles = makeStyles({
       },
       paddingBottom: '3em',
       paddingTop: '4em',
-      backgroundImage: `url(${background})`,
+      backgroundImage: 'url("https://imgur.com/wys2bRo.jpg")',
       backgroundSize: 'cover',
       height: '90vh',
       minHeight: '38em',
