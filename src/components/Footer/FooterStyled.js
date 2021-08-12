@@ -109,7 +109,7 @@ export function FooterStyled() {
             <span>Powered by</span>
             <div>
               <Icon
-                src="https://imgur.com/7bn2gQY.png"
+                src="https://imgur.com/SkcRcfF.png"
                 alt="ReactJS"
                 title="ReactJS"
               />
