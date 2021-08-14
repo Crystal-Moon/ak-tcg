@@ -2,7 +2,7 @@ import GIFEncoder from 'gif-encoder-2';
 import { download } from './tools';
 import { shine_frames } from 'assets/imgs/shine';
 
-export async function makeGif(cardImage, cb) {
+const makeGif = async (cardImage, cb) => {
   const canvas = document.createElement('canvas');
   const w = 303,
     h = 432;
@@ -24,7 +24,7 @@ export async function makeGif(cardImage, cb) {
   const blob = new Blob([buffer], { type: 'image/gif' });
   if (cb) cb();
   download(blob, 'gif');
-}
+};
 
 const buildMakerFrame = (encoder, ctx, back_img, h, w) =>
   new Promise(resolve => {
@@ -54,3 +54,5 @@ const cleaner = (ctx, height, width) =>
     ctx.fillStyle = '#000000';
     ctx.fillRect(0, 0, width, height);
   };
+
+export default makeGif;

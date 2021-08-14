@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import { useStyles } from './styles';
-import { getElementFile, getStarFile } from 'helpers';
+import { getElementFile, getStarFile } from 'helpers/tools';
 import Hole from 'components/Hole';
 
 export function CardStyled(props) {

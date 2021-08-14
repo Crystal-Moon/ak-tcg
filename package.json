@@ -18,7 +18,8 @@
     "react-avatar-editor": "^11.1.0",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.11.1",
-    "react-scripts": "4.0.3"
+    "react-scripts": "4.0.3",
+    "validate.io-positive-integer": "^1.0.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "7.12.13",

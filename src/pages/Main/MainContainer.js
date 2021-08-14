@@ -1,25 +1,14 @@
 import { useState } from 'react';
+import { DEFAUTL_CARD } from 'helpers/constants';
 import MainView from './MainView';
 
 export function MainContainer() {
   const [incomingFile, setIncomingFile] = useState({});
   const [editor, setEditor] = useState();
+  const [card, setCard] = useState(DEFAUTL_CARD);
   const [modal, setModal] = useState(false);
-  const [card, setCard] = useState({
-    name: 'NickName',
-    title: '',
-    level: 25,
-    element: 'brutal',
-    star: 1,
-    bg_uri: null,
-  });
-
-  function openModal() {
-    setModal(true);
-  }
-  function closeModal() {
-    setModal(false);
-  }
+  const openModal = () => setModal(true);
+  const closeModal = () => setModal(false);
 
   function handlerUploadBackground(event) {
     const file = event.target.files[0];

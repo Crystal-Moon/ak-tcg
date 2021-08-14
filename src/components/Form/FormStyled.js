@@ -14,7 +14,8 @@ import TextField from './TextFieldStyled';
 import Select from './SelectStyled';
 import Icon from 'components/Icon';
 import Dialog from 'components/Dialog';
-import { ELEMENTS, makeImage } from 'helpers';
+import { ELEMENTS, cardValidators } from 'helpers/constants';
+import makeImage from 'helpers/maker';
 import uploadIcon from 'assets/icons/upload.svg';
 import editIcon from 'assets/icons/edit.svg';
 
@@ -40,17 +41,19 @@ export function FormStyled(props) {
   const closeDialog = () => setDialog(false);
 
   function handlerDownload(_isGif) {
-    for (const k in form) {
-      if (k !== 'bg_uri')
-        form[k] = String(form[k]).replace(/[ ]+/g, ' ').trim();
-    }
-    if (!form.bg_uri) return alert(t('components.form.alert.bg_uri'));
-    if (!form.name) return alert(t('components.form.alert.name'));
-    if (!form.level) return alert(t('components.form.alert.level'));
+    const failField = validateForm();
+    if (failField) return alert(t(`components.form.alert.${failField}`));
 
     setIsGif(_isGif);
     closeMenu();
     openDialog();
+  }
+
+  function validateForm() {
+    const trim = v => String(v).replace(/[ ]+/g, ' ').trim();
+    for (const k in form) {
+      if (cardValidators[k] && !cardValidators[k](trim(form[k]))) return k;
+    }
   }
 
   function downloadImage() {

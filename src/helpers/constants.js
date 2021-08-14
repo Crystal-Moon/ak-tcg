@@ -1,3 +1,5 @@
+import isPositive from 'validate.io-positive-integer';
+
 // elements
 import lightning from 'assets/icons/e_lightning.png';
 import brutal from 'assets/icons/e_brutal.png';
@@ -14,10 +16,7 @@ import _3 from 'assets/imgs/macro_3.png';
 import _4 from 'assets/imgs/macro_4.png';
 import _5 from 'assets/imgs/macro_5.png';
 
-// maker
-import { makeImage } from './maker';
-
-const ELEMENTS = [
+export const ELEMENTS = [
   'brutal',
   'storm',
   'fire',
@@ -27,7 +26,7 @@ const ELEMENTS = [
   'dark',
 ];
 
-const ELEMENT_FILES = {
+export const ELEMENT_FILES = {
   brutal,
   storm,
   fire,
@@ -37,13 +36,22 @@ const ELEMENT_FILES = {
   dark,
 };
 
-const getElementFile = (elem = 'brutal') => {
-  return ELEMENT_FILES[elem];
+export const STAR_FILES = { _1, _2, _3, _4, _5 };
+
+export const DEFAUTL_CARD = {
+  name: 'NickName',
+  title: '',
+  level: 25,
+  element: 'brutal',
+  star: 1,
+  bg_uri: null,
 };
 
-const STAR_FILES = { _1, _2, _3, _4, _5 };
-const getStarFile = (n = 1) => {
-  return STAR_FILES[`_${n}`];
+export const cardValidators = {
+  name: v => !!v.length,
+  title: () => true,
+  level: v => /^([0-9]{1,2})$/g.test(v) && isPositive(Number(v)),
+  element: v => ELEMENTS.includes(v),
+  star: v => /[0-5]/g.test(v),
+  bg_uri: v => String(v) !== 'null',
 };
-
-export { ELEMENTS, getElementFile, getStarFile, makeImage };

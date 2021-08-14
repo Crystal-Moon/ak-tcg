@@ -81,7 +81,7 @@ export function FooterStyled() {
             sm={6}
             justifyContent={isSm ? 'center' : 'flex-start'}
           >
-            <span>Made with ♥ by</span>
+            <span>Made with &#10084; by</span>
             <div className={classes.CM_logo}>
               <Icon
                 src="https://imgur.com/YBC1K87.png"

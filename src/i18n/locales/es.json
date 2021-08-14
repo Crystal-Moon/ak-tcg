@@ -15,7 +15,9 @@
             "alert": {
                 "bg_uri": "No hay imagen cargada!",
                 "name": "La carta debe tener algún nombre",
-                "level": "Nivel minimo es 1"
+                "star": "Rareza no válida",
+                "element": "Elemento no válido",
+                "level": "Nivel no válido"
             }
         },
         "elements": {

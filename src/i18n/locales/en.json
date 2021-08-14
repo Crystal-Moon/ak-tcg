@@ -15,7 +15,9 @@
             "alert": {
                 "bg_uri": "Please, upload an image!",
                 "name": "Card Name is empty!",
-                "level": "Minimum level is 1"
+                "star": "Invalid rarity",
+                "element": "Invalid Attribute",
+                "level": "Invalid level"
             }
         },
         "elements": {

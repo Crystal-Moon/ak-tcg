@@ -1,4 +1,12 @@
-import { getStarFile, getElementFile } from './constants';
+import { ELEMENT_FILES, STAR_FILES } from './constants';
+
+const getElementFile = (elem = 'brutal') => {
+  return ELEMENT_FILES[elem];
+};
+const getStarFile = (n = 1) => {
+  return STAR_FILES[`_${n}`];
+};
+
 const adjustFiles = card => {
   return [
     {
@@ -63,4 +71,12 @@ const download = (blob, ext) => {
   link.click();
 };
 
-export { adjustFiles, adjustText, funcComposite, funcWrite, download };
+export {
+  getElementFile,
+  getStarFile,
+  adjustFiles,
+  adjustText,
+  funcComposite,
+  funcWrite,
+  download,
+};

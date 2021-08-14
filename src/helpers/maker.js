@@ -5,14 +5,13 @@ import {
   funcWrite,
   download,
 } from './tools';
-import { makeGif } from './gifer';
+import makeGif from './gifer';
 
 const makeImage = (card, cb_gif) => {
   const canvas = document.createElement('canvas');
-  const w = 303,
-    h = 432;
-  canvas.width = w;
-  canvas.height = h;
+  canvas.width = 303;
+  canvas.height = 432;
+
   const ctx = canvas.getContext('2d');
   const composite = funcComposite(ctx);
   const write = funcWrite(ctx);
@@ -32,4 +31,4 @@ const makeImage = (card, cb_gif) => {
   );
 };
 
-export { makeImage };
+export default makeImage;
