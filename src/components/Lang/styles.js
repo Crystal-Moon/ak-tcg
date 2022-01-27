@@ -5,14 +5,13 @@ export const useStyles = makeStyles({
     flexDirection: 'row !important',
   },
   label: {
-    marginLeft: '0.3em',
-    marginRight: '0.3em',
-    border: '0.2rem solid',
-    borderColor: 'transparent',
+    marginLeft: '0.3em !important',
+    marginRight: '0.3em !important',
+    border: '0.2rem solid transparent !important',
   },
   checked: {
-    borderColor: '#3f51b5',
-    color: '#3f51b5',
+    borderColor: '#3f51b5 !important',
+    color: '#3f51b5 !important',
     fontWeight: 'bold',
   },
 });
