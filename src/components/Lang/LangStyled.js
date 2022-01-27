@@ -2,11 +2,11 @@ import React from 'react';
 import classnames from 'classnames';
 import { useStyles } from './styles';
 import { useTranslation } from 'react-i18next';
-import { IconButton, FormControl } from '@material-ui/core';
+import { FormControl, Tooltip, Chip } from '@material-ui/core';
 
 const LANG = [
-  { lang: 'es', flag: 'esp' },
-  { lang: 'en', flag: 'gbr' },
+  { lang: 'es', label: 'Español' },
+  { lang: 'en', label: 'English' },
 ];
 
 export function LangStyled() {
@@ -21,35 +21,16 @@ export function LangStyled() {
 
   return (
     <FormControl className={classes.root}>
-      {LANG.map(({ lang, flag }, k) => (
-        <div key={k}>
-          <input
-            type="radio"
-            className={classes.input}
-            name="lang"
-            id={`lang_${lang}`}
-            value={lang}
-            checked={selectedLang === lang}
-          />
-          <label
+      {LANG.map(({ lang, label }, k) => (
+        <Tooltip title={label} key={k}>
+          <Chip
             className={classnames(classes.label, {
               [classes.checked]: selectedLang === lang,
             })}
-            htmlFor={`lang_${lang}`}
-          >
-            <IconButton
-              onClick={() => onChangeLang(lang)}
-              className={classes.btn}
-              color="primary"
-            >
-              <img
-                className={classes.flag}
-                src={`https://restcountries.eu/data/${flag}.svg`}
-                alt={lang}
-              />
-            </IconButton>
-          </label>
-        </div>
+            label={lang.toUpperCase()}
+            onClick={() => onChangeLang(lang)}
+          />
+        </Tooltip>
       ))}
     </FormControl>
   );
