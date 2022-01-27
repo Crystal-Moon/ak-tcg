@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/ak-tcg/static/js/main.81b93d0c.chunk.js",
-    "main.js.map": "/ak-tcg/static/js/main.81b93d0c.chunk.js.map",
+    "main.js": "/ak-tcg/static/js/main.a3534999.chunk.js",
+    "main.js.map": "/ak-tcg/static/js/main.a3534999.chunk.js.map",
     "runtime-main.js": "/ak-tcg/static/js/runtime-main.d4a94646.js",
     "runtime-main.js.map": "/ak-tcg/static/js/runtime-main.d4a94646.js.map",
-    "static/js/2.75cc4983.chunk.js": "/ak-tcg/static/js/2.75cc4983.chunk.js",
-    "static/js/2.75cc4983.chunk.js.map": "/ak-tcg/static/js/2.75cc4983.chunk.js.map",
+    "static/js/2.1254cf45.chunk.js": "/ak-tcg/static/js/2.1254cf45.chunk.js",
+    "static/js/2.1254cf45.chunk.js.map": "/ak-tcg/static/js/2.1254cf45.chunk.js.map",
     "index.html": "/ak-tcg/index.html",
-    "static/js/2.75cc4983.chunk.js.LICENSE.txt": "/ak-tcg/static/js/2.75cc4983.chunk.js.LICENSE.txt",
+    "static/js/2.1254cf45.chunk.js.LICENSE.txt": "/ak-tcg/static/js/2.1254cf45.chunk.js.LICENSE.txt",
     "static/media/01.ebb76a31.png": "/ak-tcg/static/media/01.ebb76a31.png",
     "static/media/02.c859d22a.png": "/ak-tcg/static/media/02.c859d22a.png",
     "static/media/03.de79bed4.png": "/ak-tcg/static/media/03.de79bed4.png",
@@ -47,7 +47,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d4a94646.js",
-    "static/js/2.75cc4983.chunk.js",
-    "static/js/main.81b93d0c.chunk.js"
+    "static/js/2.1254cf45.chunk.js",
+    "static/js/main.a3534999.chunk.js"
   ]
 }
