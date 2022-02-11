@@ -86,8 +86,8 @@ export function FooterStyled() {
             </div>
             <div>
               <Icon
-                src="https://restcountries.eu/data/arg.svg"
-                alt="Argentina"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/320px-Flag_of_Argentina.svg.png"
+                alt="arg"
                 title="Argentina"
               />
               <span>2021</span>
