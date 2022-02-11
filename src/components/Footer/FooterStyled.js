@@ -55,12 +55,6 @@ export function FooterStyled() {
                   target="_blank"
                 >
                   [{t('pages.footer.calculator')}]
-                </a>{' '}
-                <a
-                  href="https://crystal-moon.github.io/royal-battle-ak/"
-                  target="_blank"
-                >
-                  [{t('pages.footer.desafio')}]
                 </a>
               </p>
             </Grid>
@@ -88,7 +82,7 @@ export function FooterStyled() {
                 alt="CrystalMoon"
                 title="CrystalMoon"
               />
-              <span>CrystaIMoon [AKES]</span>
+              <span>CrystalMoon [AKES]</span>
             </div>
             <div>
               <Icon
